@@ -37,6 +37,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblVer = new System.Windows.Forms.Label();
             this.cbxVer = new System.Windows.Forms.ComboBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +75,7 @@
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminarSeleccionado
             // 
@@ -84,6 +86,7 @@
             this.btnEliminarSeleccionado.TabIndex = 4;
             this.btnEliminarSeleccionado.Text = "Eliminar Seleccionado";
             this.btnEliminarSeleccionado.UseVisualStyleBackColor = true;
+            this.btnEliminarSeleccionado.Click += new System.EventHandler(this.btnEliminarSeleccionado_Click);
             // 
             // btnNuevo
             // 
@@ -94,6 +97,7 @@
             this.btnNuevo.TabIndex = 5;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnAgregar
             // 
@@ -104,6 +108,7 @@
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblVer
             // 
@@ -118,16 +123,29 @@
             // cbxVer
             // 
             this.cbxVer.FormattingEnabled = true;
+            this.cbxVer.Items.AddRange(new object[] {
+            "Clases de Vehiculos ",
+            "Tipo de Vehiculos",
+            "Formas de Pago"});
             this.cbxVer.Location = new System.Drawing.Point(107, 20);
             this.cbxVer.Name = "cbxVer";
             this.cbxVer.Size = new System.Drawing.Size(237, 21);
             this.cbxVer.TabIndex = 8;
+            // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(147, 450);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(216, 20);
+            this.txtID.TabIndex = 9;
+            this.txtID.Visible = false;
             // 
             // FrmGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 483);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.cbxVer);
             this.Controls.Add(this.lblVer);
             this.Controls.Add(this.btnAgregar);
@@ -139,6 +157,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmGestion";
             this.Text = "Gestion";
+            this.Load += new System.EventHandler(this.FrmGestion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,5 +175,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblVer;
         private System.Windows.Forms.ComboBox cbxVer;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

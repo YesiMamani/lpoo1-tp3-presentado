@@ -15,5 +15,30 @@ namespace Vistas
         {
             InitializeComponent();
         }
+
+        private void FrmGestion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarSeleccionado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
