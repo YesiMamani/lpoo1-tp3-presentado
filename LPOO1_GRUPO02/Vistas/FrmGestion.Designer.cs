@@ -32,7 +32,7 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEliminarSeleccionado = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblVer = new System.Windows.Forms.Label();
@@ -75,15 +75,15 @@
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // btnEliminar
+            // btnEliminarSeleccionado
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(415, 402);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(184, 34);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.Text = "Eliminar Seleccionado";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminarSeleccionado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarSeleccionado.Location = new System.Drawing.Point(415, 402);
+            this.btnEliminarSeleccionado.Name = "btnEliminarSeleccionado";
+            this.btnEliminarSeleccionado.Size = new System.Drawing.Size(184, 34);
+            this.btnEliminarSeleccionado.TabIndex = 4;
+            this.btnEliminarSeleccionado.Text = "Eliminar Seleccionado";
+            this.btnEliminarSeleccionado.UseVisualStyleBackColor = true;
             // 
             // btnNuevo
             // 
@@ -132,7 +132,7 @@
             this.Controls.Add(this.lblVer);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEliminarSeleccionado);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
@@ -151,7 +151,7 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnModificar;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnEliminarSeleccionado;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblVer;
