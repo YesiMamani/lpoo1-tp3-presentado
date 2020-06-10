@@ -47,3 +47,5 @@ E:\usuarios\alumno\Escritorio\LABPoo2020\TRABAJOS PRACTICOS\TP A PRESENTAR\lpoo1
 E:\usuarios\alumno\Escritorio\LABPoo2020\TRABAJOS PRACTICOS\TP A PRESENTAR\lpoo1_tp3\LPOO1_GRUPO02\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
 E:\usuarios\alumno\Escritorio\LABPoo2020\TRABAJOS PRACTICOS\TP A PRESENTAR\lpoo1_tp3\LPOO1_GRUPO02\Vistas\obj\x86\Debug\Vistas.exe
 E:\usuarios\alumno\Escritorio\LABPoo2020\TRABAJOS PRACTICOS\TP A PRESENTAR\lpoo1_tp3\LPOO1_GRUPO02\Vistas\obj\x86\Debug\Vistas.pdb
+E:\usuarios\alumno\Documentos\lpoo1-tp3-presentado\LPOO1_GRUPO02\Vistas\obj\x86\Debug\Vistas.exe
+E:\usuarios\alumno\Documentos\lpoo1-tp3-presentado\LPOO1_GRUPO02\Vistas\obj\x86\Debug\Vistas.pdb
