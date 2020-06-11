@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,8 @@
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gestionDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionClasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +56,8 @@
             this.clientesToolStripMenuItem,
             this.vehiculosToolStripMenuItem,
             this.ventasToolStripMenuItem,
-            this.usuarioToolStripMenuItem});
+            this.usuarioToolStripMenuItem,
+            this.gestionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1056, 150);
@@ -83,10 +86,17 @@
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             this.vehiculosToolStripMenuItem.MouseHover += new System.EventHandler(this.vehiculosToolStripMenuItem_MouseHover);
             // 
+            // gestionDeVehiculosToolStripMenuItem
+            // 
+            this.gestionDeVehiculosToolStripMenuItem.Name = "gestionDeVehiculosToolStripMenuItem";
+            this.gestionDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(329, 34);
+            this.gestionDeVehiculosToolStripMenuItem.Text = "Gestion de Vehiculos";
+            this.gestionDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeVehiculosToolStripMenuItem_Click);
+            // 
             // listadoDeVehiculosToolStripMenuItem
             // 
             this.listadoDeVehiculosToolStripMenuItem.Name = "listadoDeVehiculosToolStripMenuItem";
-            this.listadoDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(325, 34);
+            this.listadoDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(329, 34);
             this.listadoDeVehiculosToolStripMenuItem.Text = "Listado de Vehiculos";
             this.listadoDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeVehiculosToolStripMenuItem_Click);
             // 
@@ -157,12 +167,20 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
-            // gestionDeVehiculosToolStripMenuItem
+            // gestionToolStripMenuItem
             // 
-            this.gestionDeVehiculosToolStripMenuItem.Name = "gestionDeVehiculosToolStripMenuItem";
-            this.gestionDeVehiculosToolStripMenuItem.Size = new System.Drawing.Size(329, 34);
-            this.gestionDeVehiculosToolStripMenuItem.Text = "Gestion de Vehiculos";
-            this.gestionDeVehiculosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeVehiculosToolStripMenuItem_Click);
+            this.gestionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionClasesToolStripMenuItem});
+            this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(114, 146);
+            this.gestionToolStripMenuItem.Text = "Gestion";
+            // 
+            // gestionClasesToolStripMenuItem
+            // 
+            this.gestionClasesToolStripMenuItem.Name = "gestionClasesToolStripMenuItem";
+            this.gestionClasesToolStripMenuItem.Size = new System.Drawing.Size(487, 34);
+            this.gestionClasesToolStripMenuItem.Text = "Gestion Clases - Tipo - Forma Pago";
+            this.gestionClasesToolStripMenuItem.Click += new System.EventHandler(this.gestionClasesToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -204,5 +222,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem gestionDeVehiculosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionClasesToolStripMenuItem;
     }
 }

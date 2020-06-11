@@ -155,5 +155,183 @@ namespace ClasesBase
             //DEVOLVER LA TABLA
             return dt;
         }
+
+        public static DataTable TraerClasesVehiculo()
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT CV_ID AS Id, CV_Descripcion AS Descripcion  FROM ClaseVehiculo";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CREACION DE LA TABLA
+            DataTable dt = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLA
+            da.Fill(dt);
+
+            //DEVOLVER LA TABLA
+            return dt;
+        }
+
+        public static DataTable TraerTiposVehiculo()
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT TV_ID AS Id, TV_Descripcion AS Descripcion  FROM TipoVehiculo";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CREACION DE LA TABLA
+            DataTable dt = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLA
+            da.Fill(dt);
+
+            //DEVOLVER LA TABLA
+            return dt;
+        }
+
+        public static void AgregarClaseVehiculo(string descripcion)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA - INSERT
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO ClaseVehiculo (CV_Descripcion)" +
+                                " VALUES (@descripcion)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void AgregarTipoVehiculo(string descripcion)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA - INSERT
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO TipoVehiculo (TV_Descripcion)" +
+                                " VALUES (@descripcion)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void EliminarClaseVehiculo(string id)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM ClaseVehiculo " +
+                                "WHERE CV_ID =@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", id);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void EliminarTipoVehiculo(string id)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM TipoVehiculo " +
+                                "WHERE TV_ID =@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", id);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void ModificarClaseVehiculo(string id, string descripcion)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA - UPDATE
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE ClaseVehiculo " +
+                                "set CV_Descripcion=@descripcion " +
+                                "WHERE CV_ID=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void ModificarTipoVehiculo(string id, string descripcion)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA - UPDATE
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE TipoVehiculo " +
+                                "set TV_Descripcion=@descripcion " +
+                                "WHERE TV_ID=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
     }
 }

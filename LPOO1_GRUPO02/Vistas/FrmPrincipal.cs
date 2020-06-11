@@ -124,6 +124,12 @@ namespace Vistas
             oFrmVehiculos.ShowDialog();
         }
 
+        private void gestionClasesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGestion oFrmGestion = new FrmGestion();
+            oFrmGestion.ShowDialog();
+        }
+
        
        
     }

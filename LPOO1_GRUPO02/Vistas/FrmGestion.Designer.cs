@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvGestion = new System.Windows.Forms.DataGridView();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -37,17 +37,18 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.lblVer = new System.Windows.Forms.Label();
             this.cbxVer = new System.Windows.Forms.ComboBox();
-            this.txtID = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtId = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGestion)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvGestion
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(847, 329);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvGestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGestion.Location = new System.Drawing.Point(3, 65);
+            this.dgvGestion.Name = "dgvGestion";
+            this.dgvGestion.Size = new System.Drawing.Size(847, 329);
+            this.dgvGestion.TabIndex = 0;
+            this.dgvGestion.CurrentCellChanged += new System.EventHandler(this.dgvGestion_CurrentCellChanged);
             // 
             // lblDescripcion
             // 
@@ -131,21 +132,22 @@
             this.cbxVer.Name = "cbxVer";
             this.cbxVer.Size = new System.Drawing.Size(237, 21);
             this.cbxVer.TabIndex = 8;
+            this.cbxVer.SelectedIndexChanged += new System.EventHandler(this.cbxVer_SelectedIndexChanged);
             // 
-            // txtID
+            // txtId
             // 
-            this.txtID.Location = new System.Drawing.Point(147, 450);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(216, 20);
-            this.txtID.TabIndex = 9;
-            this.txtID.Visible = false;
+            this.txtId.Location = new System.Drawing.Point(147, 450);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(216, 20);
+            this.txtId.TabIndex = 9;
+            this.txtId.Visible = false;
             // 
             // FrmGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(851, 483);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.cbxVer);
             this.Controls.Add(this.lblVer);
             this.Controls.Add(this.btnAgregar);
@@ -154,11 +156,12 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblDescripcion);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvGestion);
             this.Name = "FrmGestion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion";
             this.Load += new System.EventHandler(this.FrmGestion_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGestion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,7 +169,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvGestion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnModificar;
@@ -175,6 +178,6 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label lblVer;
         private System.Windows.Forms.ComboBox cbxVer;
-        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

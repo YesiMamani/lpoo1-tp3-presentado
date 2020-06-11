@@ -140,5 +140,94 @@ namespace ClasesBase
             //DEVOLVER LA TABLA
             return dt;
         }
+
+        public static DataTable TraerFormasPago()
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT FP_ID AS Id, FP_Descripcion AS Descripcion  FROM FormaPago";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CREACION DE LA TABLA
+            DataTable dt = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLA
+            da.Fill(dt);
+
+            //DEVOLVER LA TABLA
+            return dt;
+        }
+
+        public static void AgregarFormaPago(string descripcion)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA - INSERT
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "INSERT INTO FormaPago (FP_Descripcion)" +
+                                " VALUES (@descripcion)";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void EliminarFormaPago(string id)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM FormaPago " +
+                                "WHERE FP_ID =@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", id);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void ModificarFormaPago(string id, string descripcion)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA - UPDATE
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE FormaPago " +
+                                "set FP_Descripcion=@descripcion " +
+                                "WHERE FP_ID=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
     }
 }
