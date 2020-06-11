@@ -19,6 +19,14 @@ namespace Vistas
 
         private void FrmVehiculos_Load(object sender, EventArgs e)
         {
+            cbxClaseVehiculo.DataSource = OperacionesVehiculos.TraerClasesVehiculo();
+            cbxClaseVehiculo.DisplayMember = "Descripcion";
+            cbxClaseVehiculo.ValueMember = "Id";
+
+            cbxTipoVehiculo.DataSource = OperacionesVehiculos.TraerTiposVehiculo();
+            cbxClaseVehiculo.DisplayMember = "Descripcion";
+            cbxClaseVehiculo.ValueMember = "Id";
+
             dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
         }
 
@@ -40,8 +48,8 @@ namespace Vistas
                 txtColor.Text = dgvVehiculos.CurrentRow.Cells[4].Value.ToString();
                 txtPuertas.Text = dgvVehiculos.CurrentRow.Cells[5].Value.ToString();
                 chkGPS.Checked = (bool)dgvVehiculos.CurrentRow.Cells[6].Value;
-                txtTipoVehiculo.Text = dgvVehiculos.CurrentRow.Cells[7].Value.ToString();
-                txtClaseVehiculo.Text = dgvVehiculos.CurrentRow.Cells[8].Value.ToString();
+                cbxTipoVehiculo.SelectedIndex = (int)dgvVehiculos.CurrentRow.Cells[7].Value;
+                cbxClaseVehiculo.SelectedIndex = (int)dgvVehiculos.CurrentRow.Cells[8].Value;
                 txtPrecio.Text = dgvVehiculos.CurrentRow.Cells[9].Value.ToString();
             }
              
@@ -67,8 +75,8 @@ namespace Vistas
             oVehiculo.Veh_color = txtColor.Text;
             oVehiculo.Veh_puertas = int.Parse(txtPuertas.Text);
             oVehiculo.Veh_gps = chkGPS.Checked;
-            oVehiculo.Veh_tipoVehiculo = txtTipoVehiculo.Text;
-            oVehiculo.Veh_claseVehiculo = txtClaseVehiculo.Text;
+            oVehiculo.Veh_tipoVehiculo = cbxTipoVehiculo.SelectedIndex;
+            oVehiculo.Veh_claseVehiculo = cbxClaseVehiculo.SelectedIndex;
             oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
 
             OperacionesVehiculos.ModificarVehiculo(oVehiculo);

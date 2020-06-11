@@ -35,14 +35,15 @@
             this.gbxListadoMarca = new System.Windows.Forms.GroupBox();
             this.gbxListadoCliente = new System.Windows.Forms.GroupBox();
             this.gbxListarFecha = new System.Windows.Forms.GroupBox();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.lblFin = new System.Windows.Forms.Label();
             this.lblInicio = new System.Windows.Forms.Label();
             this.btnListarFecha = new System.Windows.Forms.Button();
             this.btnListarTodo = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.btnAnularVentaSeleccionada = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentasRealizadas)).BeginInit();
             this.gbxListadoMarca.SuspendLayout();
             this.gbxListadoCliente.SuspendLayout();
@@ -55,7 +56,8 @@
             this.dgvVentasRealizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVentasRealizadas.Location = new System.Drawing.Point(12, 198);
             this.dgvVentasRealizadas.Name = "dgvVentasRealizadas";
-            this.dgvVentasRealizadas.Size = new System.Drawing.Size(1076, 428);
+            this.dgvVentasRealizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVentasRealizadas.Size = new System.Drawing.Size(1076, 407);
             this.dgvVentasRealizadas.TabIndex = 0;
             // 
             // lblVentasRealizadas
@@ -126,6 +128,24 @@
             this.gbxListarFecha.TabStop = false;
             this.gbxListarFecha.Text = "Listar por Fecha";
             // 
+            // dtpFechaFin
+            // 
+            this.dtpFechaFin.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFin.Location = new System.Drawing.Point(134, 55);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(118, 24);
+            this.dtpFechaFin.TabIndex = 4;
+            // 
+            // dtpFechaInicio
+            // 
+            this.dtpFechaInicio.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 25);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(118, 24);
+            this.dtpFechaInicio.TabIndex = 3;
+            // 
             // lblFin
             // 
             this.lblFin.AutoSize = true;
@@ -195,23 +215,18 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // dtpFechaInicio
+            // btnAnularVentaSeleccionada
             // 
-            this.dtpFechaInicio.CustomFormat = "dd/MM/yyyy";
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(134, 25);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(118, 24);
-            this.dtpFechaInicio.TabIndex = 3;
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.CustomFormat = "dd/MM/yyyy";
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaFin.Location = new System.Drawing.Point(134, 55);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(118, 24);
-            this.dtpFechaFin.TabIndex = 4;
+            this.btnAnularVentaSeleccionada.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAnularVentaSeleccionada.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnularVentaSeleccionada.ForeColor = System.Drawing.Color.White;
+            this.btnAnularVentaSeleccionada.Location = new System.Drawing.Point(884, 611);
+            this.btnAnularVentaSeleccionada.Name = "btnAnularVentaSeleccionada";
+            this.btnAnularVentaSeleccionada.Size = new System.Drawing.Size(179, 33);
+            this.btnAnularVentaSeleccionada.TabIndex = 11;
+            this.btnAnularVentaSeleccionada.Text = "Anular Venta Seleccionada";
+            this.btnAnularVentaSeleccionada.UseVisualStyleBackColor = false;
+            this.btnAnularVentaSeleccionada.Click += new System.EventHandler(this.btnAnularVentaSeleccionada_Click);
             // 
             // FrmListadoVentas
             // 
@@ -219,6 +234,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1100, 650);
+            this.Controls.Add(this.btnAnularVentaSeleccionada);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnListarTodo);
             this.Controls.Add(this.btnListarFecha);
@@ -259,5 +275,6 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.Button btnAnularVentaSeleccionada;
     }
 }

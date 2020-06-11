@@ -48,10 +48,10 @@
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.txtPuertas = new System.Windows.Forms.TextBox();
-            this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
-            this.txtClaseVehiculo = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.chkGPS = new System.Windows.Forms.CheckBox();
+            this.cbxTipoVehiculo = new System.Windows.Forms.ComboBox();
+            this.cbxClaseVehiculo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,20 +228,6 @@
             this.txtPuertas.Size = new System.Drawing.Size(181, 20);
             this.txtPuertas.TabIndex = 19;
             // 
-            // txtTipoVehiculo
-            // 
-            this.txtTipoVehiculo.Location = new System.Drawing.Point(731, 373);
-            this.txtTipoVehiculo.Name = "txtTipoVehiculo";
-            this.txtTipoVehiculo.Size = new System.Drawing.Size(181, 20);
-            this.txtTipoVehiculo.TabIndex = 20;
-            // 
-            // txtClaseVehiculo
-            // 
-            this.txtClaseVehiculo.Location = new System.Drawing.Point(731, 407);
-            this.txtClaseVehiculo.Name = "txtClaseVehiculo";
-            this.txtClaseVehiculo.Size = new System.Drawing.Size(181, 20);
-            this.txtClaseVehiculo.TabIndex = 21;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(731, 438);
@@ -258,15 +244,31 @@
             this.chkGPS.TabIndex = 23;
             this.chkGPS.UseVisualStyleBackColor = true;
             // 
+            // cbxTipoVehiculo
+            // 
+            this.cbxTipoVehiculo.FormattingEnabled = true;
+            this.cbxTipoVehiculo.Location = new System.Drawing.Point(731, 370);
+            this.cbxTipoVehiculo.Name = "cbxTipoVehiculo";
+            this.cbxTipoVehiculo.Size = new System.Drawing.Size(181, 21);
+            this.cbxTipoVehiculo.TabIndex = 24;
+            // 
+            // cbxClaseVehiculo
+            // 
+            this.cbxClaseVehiculo.FormattingEnabled = true;
+            this.cbxClaseVehiculo.Location = new System.Drawing.Point(731, 398);
+            this.cbxClaseVehiculo.Name = "cbxClaseVehiculo";
+            this.cbxClaseVehiculo.Size = new System.Drawing.Size(181, 21);
+            this.cbxClaseVehiculo.TabIndex = 25;
+            // 
             // FrmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 516);
+            this.Controls.Add(this.cbxClaseVehiculo);
+            this.Controls.Add(this.cbxTipoVehiculo);
             this.Controls.Add(this.chkGPS);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtClaseVehiculo);
-            this.Controls.Add(this.txtTipoVehiculo);
             this.Controls.Add(this.txtPuertas);
             this.Controls.Add(this.txtColor);
             this.Controls.Add(this.txtModelo);
@@ -318,9 +320,9 @@
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtPuertas;
-        private System.Windows.Forms.TextBox txtTipoVehiculo;
-        private System.Windows.Forms.TextBox txtClaseVehiculo;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.CheckBox chkGPS;
+        private System.Windows.Forms.ComboBox cbxTipoVehiculo;
+        private System.Windows.Forms.ComboBox cbxClaseVehiculo;
     }
 }

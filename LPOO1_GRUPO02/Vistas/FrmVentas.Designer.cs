@@ -157,10 +157,6 @@
             // cmbFormaDePago
             // 
             this.cmbFormaDePago.FormattingEnabled = true;
-            this.cmbFormaDePago.Items.AddRange(new object[] {
-            "Efectivo",
-            "Cheque",
-            "Transferencia"});
             this.cmbFormaDePago.Location = new System.Drawing.Point(134, 214);
             this.cmbFormaDePago.Name = "cmbFormaDePago";
             this.cmbFormaDePago.Size = new System.Drawing.Size(160, 21);
@@ -176,7 +172,8 @@
             // 
             // dtpFechaDeCompra
             // 
-            this.dtpFechaDeCompra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDeCompra.CustomFormat = "dd/MM/yyyy";
+            this.dtpFechaDeCompra.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaDeCompra.Location = new System.Drawing.Point(134, 294);
             this.dtpFechaDeCompra.Name = "dtpFechaDeCompra";
             this.dtpFechaDeCompra.Size = new System.Drawing.Size(233, 20);

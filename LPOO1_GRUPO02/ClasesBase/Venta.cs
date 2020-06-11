@@ -12,8 +12,9 @@ namespace ClasesBase
         private string veh_matricula;
         private int usu_id;
         private DateTime vta_fecha;
-        private string vta_formaPago;
+        private int vta_formaPago;
         private decimal vta_precioFinal;
+        private string vta_estado;
 
         public decimal Vta_precioFinal
         {
@@ -21,7 +22,7 @@ namespace ClasesBase
             set { vta_precioFinal = value; }
         }
 
-        public string Vta_formaPago
+        public int Vta_formaPago
         {
             get { return vta_formaPago; }
             set { vta_formaPago = value; }
@@ -55,6 +56,12 @@ namespace ClasesBase
         {
             get { return vta_id; }
             set { vta_id = value; }
+        }
+
+        public string Vta_estado
+        {
+            get { return vta_estado; }
+            set { vta_estado = value; }
         }
     }
 }

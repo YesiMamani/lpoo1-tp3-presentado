@@ -19,7 +19,7 @@ namespace Vistas
 
         private void btnAceptarVehiculo_Click(object sender, EventArgs e)
         {
-            if (txtMatricula.Text !="" && txtMarca.Text != "" && txtLinea.Text != "" && txtModelo.Text != "" && txtColor.Text != "" && txtPuertas.Text != "" && txtTipoVehiculo.Text != "" && txtClaseVehiculo.Text != "" && txtPrecio.Text != "")
+            if (txtMatricula.Text !="" && txtMarca.Text != "" && txtLinea.Text != "" && txtModelo.Text != "" && txtColor.Text != "" && txtPuertas.Text != "" && cbxTipoVehiculo.Text != "" && cbxClaseVehiculo.Text != "" && txtPrecio.Text != "")
             {
                 string sValorCheckGps="No";  //traduciendo y almacenando en una variable tipo string
                 if (chkGps.Checked)
@@ -34,8 +34,8 @@ namespace Vistas
                  + "\nColor: " + txtColor.Text
                  + "\nPuertas: " + txtPuertas.Text
                  + "\nGPS: " + sValorCheckGps
-                 + "\nTipo de Vehiculo: " + txtTipoVehiculo.Text
-                 + "\nClase de vehiculo: " + txtClaseVehiculo.Text
+                 + "\nTipo de Vehiculo: " + cbxClaseVehiculo.Text
+                 + "\nClase de vehiculo: " + cbxTipoVehiculo.Text
                  + "\nPrecio: " + txtPrecio.Text
                  , "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (respuesta.ToString() == "Yes")
@@ -48,24 +48,24 @@ namespace Vistas
                     oVehiculo.Veh_color = txtColor.Text;
                     oVehiculo.Veh_puertas = int.Parse(txtPuertas.Text);
                     oVehiculo.Veh_gps = chkGps.Checked; 
-                    oVehiculo.Veh_tipoVehiculo = txtTipoVehiculo.Text;
-                    oVehiculo.Veh_claseVehiculo = txtClaseVehiculo.Text;
+                    oVehiculo.Veh_tipoVehiculo = cbxTipoVehiculo.SelectedIndex;
+                    oVehiculo.Veh_claseVehiculo = cbxClaseVehiculo.SelectedIndex;
                     oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
 
                     OperacionesVehiculos.AgregarVehiculo(oVehiculo);
 
-                    MessageBox.Show("Se guardaron los siguientes datos: \n"
-                    + "\nMatricula:" + oVehiculo.Veh_matricula
-                    + "\nMarca: " + oVehiculo.Veh_marca
-                    + "\nLinea: " + oVehiculo.Veh_linea
-                    + "\nModelo: " + oVehiculo.Veh_modelo
-                    + "\nColor: " + oVehiculo.Veh_color
-                    + "\nPuertas: " + oVehiculo.Veh_puertas
-                    + "\nGPS: " + oVehiculo.Veh_gps
-                    + "\nTipo de Vehiculo: " + oVehiculo.Veh_tipoVehiculo
-                    + "\nClase de vehiculo: " + oVehiculo.Veh_claseVehiculo
-                    + "\nPrecio: " + oVehiculo.Veh_precio
-                     , "Confirmacion");
+                    //MessageBox.Show("Se guardaron los siguientes datos: \n"
+                    //+ "\nMatricula:" + oVehiculo.Veh_matricula
+                    //+ "\nMarca: " + oVehiculo.Veh_marca
+                    //+ "\nLinea: " + oVehiculo.Veh_linea
+                    //+ "\nModelo: " + oVehiculo.Veh_modelo
+                    //+ "\nColor: " + oVehiculo.Veh_color
+                    //+ "\nPuertas: " + oVehiculo.Veh_puertas
+                    //+ "\nGPS: " + oVehiculo.Veh_gps
+                    //+ "\nTipo de Vehiculo: " + oVehiculo.Veh_tipoVehiculo
+                    //+ "\nClase de vehiculo: " + oVehiculo.Veh_claseVehiculo
+                    //+ "\nPrecio: " + oVehiculo.Veh_precio
+                    // , "Confirmacion");
                     limpiarCampos();
                 }
 
@@ -87,8 +87,8 @@ private void limpiarCampos()
                 txtColor.Clear();
                 txtPuertas.Clear();
                 chkGps.Checked=false;
-                txtTipoVehiculo.Clear();
-                txtClaseVehiculo.Clear();
+                cbxClaseVehiculo.Text="";
+                cbxTipoVehiculo.Text="";
                 txtPrecio.Clear();
 }private void btnCancelarVehiculo_Click(object sender, EventArgs e)
         {
@@ -123,6 +123,17 @@ private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         e.Handled = true;
         return;
     }
+}
+
+private void FrmAltaVehiculo_Load(object sender, EventArgs e)
+{
+    cbxClaseVehiculo.DataSource = OperacionesVehiculos.TraerClasesVehiculo();
+    cbxClaseVehiculo.DisplayMember = "Descripcion";
+    cbxClaseVehiculo.ValueMember = "Id";
+
+    cbxTipoVehiculo.DataSource = OperacionesVehiculos.TraerTiposVehiculo();
+    cbxClaseVehiculo.DisplayMember = "Descripcion";
+    cbxClaseVehiculo.ValueMember = "Id";
 }
     }
 }

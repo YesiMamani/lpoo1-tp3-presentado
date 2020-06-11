@@ -14,8 +14,8 @@ namespace ClasesBase
         private string veh_color;
         private int veh_puertas;
         private bool veh_gps;
-        private string veh_tipoVehiculo;
-        private string veh_claseVehiculo;
+        private int veh_tipoVehiculo;
+        private int veh_claseVehiculo;
         private decimal veh_precio;
 
         public decimal Veh_precio
@@ -24,13 +24,13 @@ namespace ClasesBase
             set { veh_precio = value; }
         }
 
-        public string Veh_claseVehiculo
+        public int Veh_claseVehiculo
         {
             get { return veh_claseVehiculo; }
             set { veh_claseVehiculo = value; }
         }
 
-        public string Veh_tipoVehiculo
+        public int Veh_tipoVehiculo
         {
             get { return veh_tipoVehiculo; }
             set { veh_tipoVehiculo = value; }

@@ -40,9 +40,9 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA - INSERT
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Venta (CLI_DNI, VEH_Matricula, USU_ID, VTA_Fecha, VTA_FormaPago, VTA_PrecioFinal)" +
+            cmd.CommandText = "INSERT INTO Venta (CLI_DNI, VEH_Matricula, USU_ID, VTA_Fecha, VTA_FormaPago, VTA_PrecioFinal, VTA_Estado)" +
                                 " VALUES " +
-                                "(@dni, @matricula, @id, @fecha, @formapago, @preciofinal)";
+                                "(@dni, @matricula, @id, @fecha, @formapago, @preciofinal, @estado)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -53,6 +53,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@fecha", oVenta.Vta_fecha);
             cmd.Parameters.AddWithValue("@formapago", oVenta.Vta_formaPago);
             cmd.Parameters.AddWithValue("@preciofinal", oVenta.Vta_precioFinal);
+            cmd.Parameters.AddWithValue("@estado", oVenta.Vta_estado);
 
             //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
             cnn.Open();
@@ -223,6 +224,28 @@ namespace ClasesBase
             //CONFIG PARAMETROS
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Parameters.AddWithValue("@descripcion", descripcion);
+
+            //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
+        }
+
+        public static void AnularVenta(int idVenta)
+        {
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "UPDATE Venta " +
+                                "set VTA_Estado='ANULADA' " +
+                                "WHERE VTA_ID=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@id", idVenta);
 
             //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
             cnn.Open();

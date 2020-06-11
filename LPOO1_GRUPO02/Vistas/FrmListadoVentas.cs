@@ -78,5 +78,19 @@ namespace Vistas
         {
             this.Close();
         }
+
+        private void btnAnularVentaSeleccionada_Click(object sender, EventArgs e)
+        {
+            if (dgvVentasRealizadas.CurrentRow != null)
+            {
+                var respuesta = MessageBox.Show("¿Desea ANULAR la venta selecionada?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (respuesta.ToString() == "Yes")
+                {
+                    int idVenta=(int)dgvVentasRealizadas.CurrentRow.Cells[0].Value;//VTA_ID
+                    OperacionesVentas.AnularVenta(idVenta);
+                    CargarGrillaVentas();
+                }
+            }
+        }
     }
 }

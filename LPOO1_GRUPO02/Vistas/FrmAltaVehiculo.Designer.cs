@@ -46,11 +46,11 @@
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtColor = new System.Windows.Forms.TextBox();
             this.txtPuertas = new System.Windows.Forms.TextBox();
-            this.txtTipoVehiculo = new System.Windows.Forms.TextBox();
-            this.txtClaseVehiculo = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.chkGps = new System.Windows.Forms.CheckBox();
+            this.cbxTipoVehiculo = new System.Windows.Forms.ComboBox();
+            this.cbxClaseVehiculo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnAceptarVehiculo
@@ -206,20 +206,6 @@
             this.txtPuertas.TabIndex = 17;
             this.txtPuertas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPuertas_KeyPress);
             // 
-            // txtTipoVehiculo
-            // 
-            this.txtTipoVehiculo.Location = new System.Drawing.Point(174, 307);
-            this.txtTipoVehiculo.Name = "txtTipoVehiculo";
-            this.txtTipoVehiculo.Size = new System.Drawing.Size(145, 20);
-            this.txtTipoVehiculo.TabIndex = 19;
-            // 
-            // txtClaseVehiculo
-            // 
-            this.txtClaseVehiculo.Location = new System.Drawing.Point(174, 353);
-            this.txtClaseVehiculo.Name = "txtClaseVehiculo";
-            this.txtClaseVehiculo.Size = new System.Drawing.Size(145, 20);
-            this.txtClaseVehiculo.TabIndex = 20;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(174, 391);
@@ -246,16 +232,32 @@
             this.chkGps.TabIndex = 23;
             this.chkGps.UseVisualStyleBackColor = true;
             // 
+            // cbxTipoVehiculo
+            // 
+            this.cbxTipoVehiculo.FormattingEnabled = true;
+            this.cbxTipoVehiculo.Location = new System.Drawing.Point(174, 305);
+            this.cbxTipoVehiculo.Name = "cbxTipoVehiculo";
+            this.cbxTipoVehiculo.Size = new System.Drawing.Size(145, 21);
+            this.cbxTipoVehiculo.TabIndex = 24;
+            // 
+            // cbxClaseVehiculo
+            // 
+            this.cbxClaseVehiculo.FormattingEnabled = true;
+            this.cbxClaseVehiculo.Location = new System.Drawing.Point(174, 351);
+            this.cbxClaseVehiculo.Name = "cbxClaseVehiculo";
+            this.cbxClaseVehiculo.Size = new System.Drawing.Size(145, 21);
+            this.cbxClaseVehiculo.TabIndex = 25;
+            // 
             // FrmAltaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 493);
+            this.ClientSize = new System.Drawing.Size(402, 493);
+            this.Controls.Add(this.cbxClaseVehiculo);
+            this.Controls.Add(this.cbxTipoVehiculo);
             this.Controls.Add(this.chkGps);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtClaseVehiculo);
-            this.Controls.Add(this.txtTipoVehiculo);
             this.Controls.Add(this.txtPuertas);
             this.Controls.Add(this.txtColor);
             this.Controls.Add(this.txtModelo);
@@ -277,6 +279,7 @@
             this.Name = "FrmAltaVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario  Alta de Vehiculos";
+            this.Load += new System.EventHandler(this.FrmAltaVehiculo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,10 +305,10 @@
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtColor;
         private System.Windows.Forms.TextBox txtPuertas;
-        private System.Windows.Forms.TextBox txtTipoVehiculo;
-        private System.Windows.Forms.TextBox txtClaseVehiculo;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.CheckBox chkGps;
+        private System.Windows.Forms.ComboBox cbxTipoVehiculo;
+        private System.Windows.Forms.ComboBox cbxClaseVehiculo;
     }
 }
