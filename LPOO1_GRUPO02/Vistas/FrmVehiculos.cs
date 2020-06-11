@@ -20,12 +20,12 @@ namespace Vistas
         private void FrmVehiculos_Load(object sender, EventArgs e)
         {
             cbxClaseVehiculo.DataSource = OperacionesVehiculos.TraerClasesVehiculo();
-            cbxClaseVehiculo.DisplayMember = "Descripcion";
+            cbxClaseVehiculo.DisplayMember = "Descripcion";   //muestre la descripcion
             cbxClaseVehiculo.ValueMember = "Id";
 
             cbxTipoVehiculo.DataSource = OperacionesVehiculos.TraerTiposVehiculo();
-            cbxClaseVehiculo.DisplayMember = "Descripcion";
-            cbxClaseVehiculo.ValueMember = "Id";
+            cbxTipoVehiculo.DisplayMember = "Descripcion";
+            cbxTipoVehiculo.ValueMember = "Id";
 
             dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
         }
@@ -48,8 +48,8 @@ namespace Vistas
                 txtColor.Text = dgvVehiculos.CurrentRow.Cells[4].Value.ToString();
                 txtPuertas.Text = dgvVehiculos.CurrentRow.Cells[5].Value.ToString();
                 chkGPS.Checked = (bool)dgvVehiculos.CurrentRow.Cells[6].Value;
-                cbxTipoVehiculo.SelectedIndex = (int)dgvVehiculos.CurrentRow.Cells[7].Value;
-                cbxClaseVehiculo.SelectedIndex = (int)dgvVehiculos.CurrentRow.Cells[8].Value;
+                cbxTipoVehiculo.SelectedValue = (int)dgvVehiculos.CurrentRow.Cells[7].Value;
+                cbxClaseVehiculo.SelectedValue = (int)dgvVehiculos.CurrentRow.Cells[8].Value;
                 txtPrecio.Text = dgvVehiculos.CurrentRow.Cells[9].Value.ToString();
             }
              
@@ -75,8 +75,8 @@ namespace Vistas
             oVehiculo.Veh_color = txtColor.Text;
             oVehiculo.Veh_puertas = int.Parse(txtPuertas.Text);
             oVehiculo.Veh_gps = chkGPS.Checked;
-            oVehiculo.Veh_tipoVehiculo = cbxTipoVehiculo.SelectedIndex;
-            oVehiculo.Veh_claseVehiculo = cbxClaseVehiculo.SelectedIndex;
+            oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
+            oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
             oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
 
             OperacionesVehiculos.ModificarVehiculo(oVehiculo);

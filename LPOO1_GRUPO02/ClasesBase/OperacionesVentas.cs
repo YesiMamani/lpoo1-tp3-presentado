@@ -40,7 +40,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA - INSERT
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Venta (CLI_DNI, VEH_Matricula, USU_ID, VTA_Fecha, VTA_FormaPago, VTA_PrecioFinal, VTA_Estado)" +
+            cmd.CommandText = "INSERT INTO Venta (CLI_DNI, VEH_Matricula, USU_ID, VTA_Fecha, FP_ID, VTA_PrecioFinal, VTA_Estado)" +
                                 " VALUES " +
                                 "(@dni, @matricula, @id, @fecha, @formapago, @preciofinal, @estado)";
             cmd.CommandType = CommandType.Text;

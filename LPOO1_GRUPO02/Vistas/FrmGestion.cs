@@ -102,12 +102,12 @@ namespace Vistas
             CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
         }
 
-        private void cbxVer_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxVer_SelectedIndexChanged(object sender, EventArgs e)  //carga la grila segun la opcion
         {
             CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
         }
 
-        private void dgvGestion_CurrentCellChanged(object sender, EventArgs e)
+        private void dgvGestion_CurrentCellChanged(object sender, EventArgs e)   //carga descripcion segun fila seleccionada
         {
             if (dgvGestion.CurrentRow != null)
             {

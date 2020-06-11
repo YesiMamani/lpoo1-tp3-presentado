@@ -26,9 +26,9 @@ namespace ClasesBase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"E:\\usuarios\\alumno\\Escritorio\\LABPoo20" +
-            "20\\TRABAJOS PRACTICOS\\TP A PRESENTAR\\lpoo1_tp3\\LPOO1_GRUPO02\\DB\\agencia.mdf\";Int" +
-            "egrated Security=True;Connect Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=E:\\usuarios\\alumno\\Documentos\\lpoo1-tp3" +
+            "-presentado\\LPOO1_GRUPO02\\DB\\agencia.mdf;Integrated Security=True;Connect Timeou" +
+            "t=30;User Instance=True")]
         public string Cadena {
             get {
                 return ((string)(this["Cadena"]));

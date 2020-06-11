@@ -48,8 +48,8 @@ namespace Vistas
                     oVehiculo.Veh_color = txtColor.Text;
                     oVehiculo.Veh_puertas = int.Parse(txtPuertas.Text);
                     oVehiculo.Veh_gps = chkGps.Checked; 
-                    oVehiculo.Veh_tipoVehiculo = cbxTipoVehiculo.SelectedIndex;
-                    oVehiculo.Veh_claseVehiculo = cbxClaseVehiculo.SelectedIndex;
+                    oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
+                    oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
                     oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
 
                     OperacionesVehiculos.AgregarVehiculo(oVehiculo);
@@ -132,8 +132,8 @@ private void FrmAltaVehiculo_Load(object sender, EventArgs e)
     cbxClaseVehiculo.ValueMember = "Id";
 
     cbxTipoVehiculo.DataSource = OperacionesVehiculos.TraerTiposVehiculo();
-    cbxClaseVehiculo.DisplayMember = "Descripcion";
-    cbxClaseVehiculo.ValueMember = "Id";
+    cbxTipoVehiculo.DisplayMember = "Descripcion";
+    cbxTipoVehiculo.ValueMember = "Id";
 }
     }
 }

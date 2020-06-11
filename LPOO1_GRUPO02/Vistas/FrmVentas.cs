@@ -63,7 +63,7 @@ namespace Vistas
             oVenta.Veh_matricula = (string)cmbVehiculo.SelectedValue;
             oVenta.Usu_id = myUser.Usu_id;
             oVenta.Vta_fecha = dtpFechaDeCompra.Value;
-            oVenta.Vta_formaPago = cmbFormaDePago.SelectedIndex;
+            oVenta.Vta_formaPago = (int)cmbFormaDePago.SelectedValue;
             oVenta.Vta_precioFinal = int.Parse(cmbPrecioFinal.Text);
             oVenta.Vta_estado = "ACTIVA";
 
