@@ -52,7 +52,7 @@ namespace Vistas
         private void cbxListadoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             InfoVenta infoVenta=new InfoVenta();
-            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString(),out infoVenta);
+            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString(),out infoVenta); //
             cantVentas.Text = infoVenta.CantidadVentas.ToString();
             cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
             importeTotal.Text = infoVenta.ImporteTotalVentas.ToString();
