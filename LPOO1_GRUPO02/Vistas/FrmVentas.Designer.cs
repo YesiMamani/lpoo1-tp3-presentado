@@ -200,6 +200,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmarCompra);
             this.Name = "FrmVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.FrmVentas_Load);
             this.ResumeLayout(false);

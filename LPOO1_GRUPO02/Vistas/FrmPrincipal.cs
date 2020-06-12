@@ -130,6 +130,11 @@ namespace Vistas
             oFrmGestion.ShowDialog();
         }
 
+        private void gestionToolStripMenuItem_MouseHover(object sender, EventArgs e)
+        {
+            this.BackgroundImage = Vistas.Properties.Resources.Tcross;
+        }
+
        
        
     }

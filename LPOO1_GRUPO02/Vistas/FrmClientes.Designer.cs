@@ -231,6 +231,7 @@
             this.Controls.Add(this.lblDNI);
             this.Controls.Add(this.lblNombreFiltro);
             this.Name = "FrmClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FrmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();

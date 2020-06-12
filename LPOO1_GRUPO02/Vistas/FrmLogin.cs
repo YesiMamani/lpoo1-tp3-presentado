@@ -69,5 +69,13 @@ namespace Vistas
         {
 
         }
+
+        private void txtContrasenia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnIngresar.PerformClick();
+            }
+        }
     }
 }

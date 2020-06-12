@@ -37,11 +37,11 @@
             this.registroVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionClasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionClasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,6 +134,23 @@
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             this.usuarioToolStripMenuItem.MouseHover += new System.EventHandler(this.usuarioToolStripMenuItem_MouseHover);
             // 
+            // gestionToolStripMenuItem
+            // 
+            this.gestionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestionClasesToolStripMenuItem});
+            this.gestionToolStripMenuItem.Image = global::Vistas.Properties.Resources.engranaje;
+            this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(130, 146);
+            this.gestionToolStripMenuItem.Text = "Gestion";
+            this.gestionToolStripMenuItem.MouseHover += new System.EventHandler(this.gestionToolStripMenuItem_MouseHover);
+            // 
+            // gestionClasesToolStripMenuItem
+            // 
+            this.gestionClasesToolStripMenuItem.Name = "gestionClasesToolStripMenuItem";
+            this.gestionClasesToolStripMenuItem.Size = new System.Drawing.Size(487, 34);
+            this.gestionClasesToolStripMenuItem.Text = "Gestion Clases - Tipo - Forma Pago";
+            this.gestionClasesToolStripMenuItem.Click += new System.EventHandler(this.gestionClasesToolStripMenuItem_Click);
+            // 
             // btnSalirPrincipal
             // 
             this.btnSalirPrincipal.BackColor = System.Drawing.Color.RoyalBlue;
@@ -166,21 +183,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
-            // gestionToolStripMenuItem
-            // 
-            this.gestionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionClasesToolStripMenuItem});
-            this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(114, 146);
-            this.gestionToolStripMenuItem.Text = "Gestion";
-            // 
-            // gestionClasesToolStripMenuItem
-            // 
-            this.gestionClasesToolStripMenuItem.Name = "gestionClasesToolStripMenuItem";
-            this.gestionClasesToolStripMenuItem.Size = new System.Drawing.Size(487, 34);
-            this.gestionClasesToolStripMenuItem.Text = "Gestion Clases - Tipo - Forma Pago";
-            this.gestionClasesToolStripMenuItem.Click += new System.EventHandler(this.gestionClasesToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 

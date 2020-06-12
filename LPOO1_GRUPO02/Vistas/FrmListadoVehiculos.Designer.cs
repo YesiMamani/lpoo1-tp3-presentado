@@ -30,8 +30,8 @@
         {
             this.btnActualizarListado = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbMarca = new System.Windows.Forms.RadioButton();
             this.rdbLinea = new System.Windows.Forms.RadioButton();
+            this.rdbMarca = new System.Windows.Forms.RadioButton();
             this.dgvVehiculos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
@@ -58,6 +58,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ordenar por:";
             // 
+            // rdbLinea
+            // 
+            this.rdbLinea.AutoSize = true;
+            this.rdbLinea.Location = new System.Drawing.Point(57, 66);
+            this.rdbLinea.Name = "rdbLinea";
+            this.rdbLinea.Size = new System.Drawing.Size(51, 17);
+            this.rdbLinea.TabIndex = 1;
+            this.rdbLinea.Text = "Linea";
+            this.rdbLinea.UseVisualStyleBackColor = true;
+            // 
             // rdbMarca
             // 
             this.rdbMarca.AutoSize = true;
@@ -70,16 +80,6 @@
             this.rdbMarca.Text = "Marca";
             this.rdbMarca.UseVisualStyleBackColor = true;
             this.rdbMarca.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // rdbLinea
-            // 
-            this.rdbLinea.AutoSize = true;
-            this.rdbLinea.Location = new System.Drawing.Point(57, 66);
-            this.rdbLinea.Name = "rdbLinea";
-            this.rdbLinea.Size = new System.Drawing.Size(51, 17);
-            this.rdbLinea.TabIndex = 1;
-            this.rdbLinea.Text = "Linea";
-            this.rdbLinea.UseVisualStyleBackColor = true;
             // 
             // dgvVehiculos
             // 
@@ -98,6 +98,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnActualizarListado);
             this.Name = "FrmListadoVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmListadoVehiculos";
             this.Load += new System.EventHandler(this.FrmListadoVehiculos_Load);
             this.groupBox1.ResumeLayout(false);

@@ -46,6 +46,7 @@
             this.dgvGestion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGestion.Location = new System.Drawing.Point(3, 65);
             this.dgvGestion.Name = "dgvGestion";
+            this.dgvGestion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGestion.Size = new System.Drawing.Size(847, 329);
             this.dgvGestion.TabIndex = 0;
             this.dgvGestion.CurrentCellChanged += new System.EventHandler(this.dgvGestion_CurrentCellChanged);
@@ -70,9 +71,9 @@
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(415, 442);
+            this.btnModificar.Location = new System.Drawing.Point(3, 442);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(184, 34);
+            this.btnModificar.Size = new System.Drawing.Size(128, 34);
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -81,9 +82,9 @@
             // btnEliminarSeleccionado
             // 
             this.btnEliminarSeleccionado.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarSeleccionado.Location = new System.Drawing.Point(415, 402);
+            this.btnEliminarSeleccionado.Location = new System.Drawing.Point(147, 442);
             this.btnEliminarSeleccionado.Name = "btnEliminarSeleccionado";
-            this.btnEliminarSeleccionado.Size = new System.Drawing.Size(184, 34);
+            this.btnEliminarSeleccionado.Size = new System.Drawing.Size(216, 34);
             this.btnEliminarSeleccionado.TabIndex = 4;
             this.btnEliminarSeleccionado.Text = "Eliminar Seleccionado";
             this.btnEliminarSeleccionado.UseVisualStyleBackColor = true;
@@ -92,7 +93,7 @@
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(631, 400);
+            this.btnNuevo.Location = new System.Drawing.Point(379, 400);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(164, 36);
             this.btnNuevo.TabIndex = 5;
@@ -103,7 +104,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(631, 442);
+            this.btnAgregar.Location = new System.Drawing.Point(379, 442);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(164, 34);
             this.btnAgregar.TabIndex = 6;
@@ -115,7 +116,7 @@
             // 
             this.lblVer.AutoSize = true;
             this.lblVer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVer.Location = new System.Drawing.Point(27, 23);
+            this.lblVer.Location = new System.Drawing.Point(56, 26);
             this.lblVer.Name = "lblVer";
             this.lblVer.Size = new System.Drawing.Size(37, 16);
             this.lblVer.TabIndex = 7;
@@ -123,22 +124,23 @@
             // 
             // cbxVer
             // 
+            this.cbxVer.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxVer.FormattingEnabled = true;
             this.cbxVer.Items.AddRange(new object[] {
             "Clases de Vehiculos ",
             "Tipo de Vehiculos",
             "Formas de Pago"});
-            this.cbxVer.Location = new System.Drawing.Point(107, 20);
+            this.cbxVer.Location = new System.Drawing.Point(147, 23);
             this.cbxVer.Name = "cbxVer";
-            this.cbxVer.Size = new System.Drawing.Size(237, 21);
+            this.cbxVer.Size = new System.Drawing.Size(216, 23);
             this.cbxVer.TabIndex = 8;
             this.cbxVer.SelectedIndexChanged += new System.EventHandler(this.cbxVer_SelectedIndexChanged);
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(147, 450);
+            this.txtId.Location = new System.Drawing.Point(3, 412);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(216, 20);
+            this.txtId.Size = new System.Drawing.Size(30, 20);
             this.txtId.TabIndex = 9;
             this.txtId.Visible = false;
             // 
@@ -146,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 483);
+            this.ClientSize = new System.Drawing.Size(551, 483);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.cbxVer);
             this.Controls.Add(this.lblVer);

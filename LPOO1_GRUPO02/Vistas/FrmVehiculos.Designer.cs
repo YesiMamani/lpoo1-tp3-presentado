@@ -67,11 +67,12 @@
             // 
             // btnAgregarVehiculo
             // 
+            this.btnAgregarVehiculo.BackgroundImage = global::Vistas.Properties.Resources.addcard;
+            this.btnAgregarVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAgregarVehiculo.Location = new System.Drawing.Point(818, 12);
             this.btnAgregarVehiculo.Name = "btnAgregarVehiculo";
             this.btnAgregarVehiculo.Size = new System.Drawing.Size(108, 75);
             this.btnAgregarVehiculo.TabIndex = 1;
-            this.btnAgregarVehiculo.Text = "Agregar";
             this.btnAgregarVehiculo.UseVisualStyleBackColor = true;
             this.btnAgregarVehiculo.Click += new System.EventHandler(this.btnAgregarVehiculo_Click);
             // 
@@ -290,6 +291,7 @@
             this.Controls.Add(this.btnAgregarVehiculo);
             this.Controls.Add(this.dgvVehiculos);
             this.Name = "FrmVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehiculos";
             this.Load += new System.EventHandler(this.FrmVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
