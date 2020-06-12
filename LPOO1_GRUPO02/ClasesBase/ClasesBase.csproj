@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs" />
+    <Compile Include="InfoVenta.cs" />
     <Compile Include="OperacionesClientes.cs" />
     <Compile Include="OperacionesVehiculos.cs" />
     <Compile Include="OperacionesVentas.cs" />

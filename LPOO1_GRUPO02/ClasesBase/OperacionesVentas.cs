@@ -61,31 +61,57 @@ namespace ClasesBase
             cnn.Close();
         }
 
-        public static DataTable TraerVentasPorCliente(string cliDni)
+        public static DataTable TraerVentasPorCliente(string cliDni, out InfoVenta infoVenta)
         {
             //CONEXION
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
 
-            //CONFIGURACION DE LA CONSULTA
+            //CONFIGURACION DE LA CONSULTA Ventas por CLIENTE
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * FROM VistaVentas WHERE [DNI CLIENTE] = @clidni";   //filtro la vista por dni cliente
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
-
             //CONFIG PARAMETROS
             cmd.Parameters.AddWithValue("@clidni", cliDni);     //cofiguramos el parametro q enviamos
 
+            //CONFIGURACION DE LA CONSULTA Ventas por CLIENTE - Anuladas
+            SqlCommand cmdA = new SqlCommand();
+            cmdA.CommandText = "SELECT * FROM VistaVentas WHERE [DNI CLIENTE] = @clidni AND ESTADO='ANULADA'";   
+            cmdA.CommandType = CommandType.Text;
+            cmdA.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmdA.Parameters.AddWithValue("@clidni", cliDni);     
+
+            //CONFIGURACION DE LA CONSULTA Ventas por cliente - Importe Total de Ventas Activas
+            SqlCommand cmdIT = new SqlCommand();
+            cmdIT.CommandText = "SELECT ISNULL(SUM(PRECIO),0) AS 'ImporteTotal' FROM VistaVentas WHERE [DNI CLIENTE] = @clidni AND ESTADO='ACTIVA'";
+            cmdIT.CommandType = CommandType.Text;
+            cmdIT.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmdIT.Parameters.AddWithValue("@clidni", cliDni);     
+
             //CREACION DE LA TABLA
-            DataTable dt = new DataTable();
+            DataTable dtVentas = new DataTable();
+            DataTable dtAnuladas = new DataTable();
+            DataTable dtImporteTotal = new DataTable();
 
             //CREACION DEL ADAPTADOR
             SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlDataAdapter daAnuladas = new SqlDataAdapter(cmdA);
+            SqlDataAdapter daImporteTotal = new SqlDataAdapter(cmdIT);
 
-            //LLENAR LA TABLA
-            da.Fill(dt);
+            //LLENAR LA TABLAS
+            da.Fill(dtVentas);
+            daAnuladas.Fill(dtAnuladas);
+            daImporteTotal.Fill(dtImporteTotal);
+            //ASIGNO VARIABLES
+            infoVenta = new InfoVenta();
+            infoVenta.CantidadVentas = dtVentas.Rows.Count;
+            infoVenta.CantidadVentasAnuladas = dtAnuladas.Rows.Count;
+            infoVenta.ImporteTotalVentas = dtImporteTotal.Rows.Count > 0 ? int.Parse(dtImporteTotal.Rows[0][0].ToString()) : 0;
 
             //DEVOLVER LA TABLA
-            return dt;
+            return dtVentas;
         }
 
         public static DataTable TraerVentasPorMarca(string marca)
@@ -95,7 +121,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM VistaVentas WHERE MARCA = @marca";     //filtramos por marca
+            cmd.CommandText = "SELECT * FROM VistaVentas WHERE MARCA = @marca" +" SELECT * FROM VistaVentas";     //filtramos por marca
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

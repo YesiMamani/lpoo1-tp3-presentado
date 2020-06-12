@@ -27,14 +27,21 @@ namespace Vistas
             cbxTipoVehiculo.DisplayMember = "Descripcion";
             cbxTipoVehiculo.ValueMember = "Id";
 
+            CargarGrillaVehiculos();
+        }
+
+        private void CargarGrillaVehiculos()
+        {
             dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
+            dgvVehiculos.Columns["TV_ID"].Visible = false;
+            dgvVehiculos.Columns["CV_ID"].Visible = false;
         }
 
         private void btnAgregarVehiculo_Click(object sender, EventArgs e)
         {
             FrmAltaVehiculo oFrmAltaVehiculo = new FrmAltaVehiculo();
             oFrmAltaVehiculo.ShowDialog();
-            dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
+            CargarGrillaVehiculos();
         }
 
         private void dgvVehiculos_CurrentCellChanged(object sender, EventArgs e)
@@ -50,7 +57,7 @@ namespace Vistas
                 chkGPS.Checked = (bool)dgvVehiculos.CurrentRow.Cells[6].Value;
                 cbxTipoVehiculo.SelectedValue = (int)dgvVehiculos.CurrentRow.Cells[7].Value;
                 cbxClaseVehiculo.SelectedValue = (int)dgvVehiculos.CurrentRow.Cells[8].Value;
-                txtPrecio.Text = dgvVehiculos.CurrentRow.Cells[9].Value.ToString();
+                txtPrecio.Text = dgvVehiculos.CurrentRow.Cells[11].Value.ToString();
             }
              
         }
@@ -61,7 +68,7 @@ namespace Vistas
             {
                 string matricula = txtMAtricula.Text;
                 OperacionesVehiculos.EliminarVehiculo(matricula);
-                dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
+                CargarGrillaVehiculos();
             }
         }
 
@@ -81,7 +88,7 @@ namespace Vistas
 
             OperacionesVehiculos.ModificarVehiculo(oVehiculo);
 
-            dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M"); //actualiza la grilla
+            CargarGrillaVehiculos();
         }
     }
 }

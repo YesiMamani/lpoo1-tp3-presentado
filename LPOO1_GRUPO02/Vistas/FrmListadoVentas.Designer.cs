@@ -44,6 +44,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnAnularVentaSeleccionada = new System.Windows.Forms.Button();
+            this.lblCantVentas = new System.Windows.Forms.Label();
+            this.lblCantVentasAnuladas = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cantVentas = new System.Windows.Forms.Label();
+            this.cantVentasAnuladas = new System.Windows.Forms.Label();
+            this.importeTotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentasRealizadas)).BeginInit();
             this.gbxListadoMarca.SuspendLayout();
             this.gbxListadoCliente.SuspendLayout();
@@ -228,12 +234,84 @@
             this.btnAnularVentaSeleccionada.UseVisualStyleBackColor = false;
             this.btnAnularVentaSeleccionada.Click += new System.EventHandler(this.btnAnularVentaSeleccionada_Click);
             // 
+            // lblCantVentas
+            // 
+            this.lblCantVentas.AutoSize = true;
+            this.lblCantVentas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantVentas.ForeColor = System.Drawing.Color.White;
+            this.lblCantVentas.Location = new System.Drawing.Point(11, 620);
+            this.lblCantVentas.Name = "lblCantVentas";
+            this.lblCantVentas.Size = new System.Drawing.Size(126, 15);
+            this.lblCantVentas.TabIndex = 12;
+            this.lblCantVentas.Text = "Cantidad de ventas:";
+            // 
+            // lblCantVentasAnuladas
+            // 
+            this.lblCantVentasAnuladas.AutoSize = true;
+            this.lblCantVentasAnuladas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantVentasAnuladas.ForeColor = System.Drawing.Color.White;
+            this.lblCantVentasAnuladas.Location = new System.Drawing.Point(254, 620);
+            this.lblCantVentasAnuladas.Name = "lblCantVentasAnuladas";
+            this.lblCantVentasAnuladas.Size = new System.Drawing.Size(199, 15);
+            this.lblCantVentasAnuladas.TabIndex = 13;
+            this.lblCantVentasAnuladas.Text = "Cantidad de ventas ANULADAS:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(565, 620);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 15);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Importe TOTAL de Ventas: $";
+            // 
+            // cantVentas
+            // 
+            this.cantVentas.AutoSize = true;
+            this.cantVentas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantVentas.ForeColor = System.Drawing.Color.White;
+            this.cantVentas.Location = new System.Drawing.Point(143, 620);
+            this.cantVentas.Name = "cantVentas";
+            this.cantVentas.Size = new System.Drawing.Size(11, 15);
+            this.cantVentas.TabIndex = 15;
+            this.cantVentas.Text = "-";
+            // 
+            // cantVentasAnuladas
+            // 
+            this.cantVentasAnuladas.AutoSize = true;
+            this.cantVentasAnuladas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantVentasAnuladas.ForeColor = System.Drawing.Color.White;
+            this.cantVentasAnuladas.Location = new System.Drawing.Point(458, 620);
+            this.cantVentasAnuladas.Name = "cantVentasAnuladas";
+            this.cantVentasAnuladas.Size = new System.Drawing.Size(11, 15);
+            this.cantVentasAnuladas.TabIndex = 16;
+            this.cantVentasAnuladas.Text = "-";
+            // 
+            // importeTotal
+            // 
+            this.importeTotal.AutoSize = true;
+            this.importeTotal.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importeTotal.ForeColor = System.Drawing.Color.White;
+            this.importeTotal.Location = new System.Drawing.Point(756, 620);
+            this.importeTotal.Name = "importeTotal";
+            this.importeTotal.Size = new System.Drawing.Size(11, 15);
+            this.importeTotal.TabIndex = 17;
+            this.importeTotal.Text = "-";
+            // 
             // FrmListadoVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1100, 650);
+            this.Controls.Add(this.importeTotal);
+            this.Controls.Add(this.cantVentasAnuladas);
+            this.Controls.Add(this.cantVentas);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCantVentasAnuladas);
+            this.Controls.Add(this.lblCantVentas);
             this.Controls.Add(this.btnAnularVentaSeleccionada);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnListarTodo);
@@ -255,6 +333,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -276,5 +355,11 @@
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.Button btnAnularVentaSeleccionada;
+        private System.Windows.Forms.Label lblCantVentas;
+        private System.Windows.Forms.Label lblCantVentasAnuladas;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label cantVentas;
+        private System.Windows.Forms.Label cantVentasAnuladas;
+        private System.Windows.Forms.Label importeTotal;
     }
 }

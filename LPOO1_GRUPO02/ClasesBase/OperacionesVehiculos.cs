@@ -17,7 +17,8 @@ namespace ClasesBase
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT VEH_Matricula," +
-                "VEH_Matricula+' - '+VEH_Marca+' - '+VEH_Linea+' - '+VEH_Color AS VEH_Info,CAST(VEH_Precio AS VARCHAR) AS VEH_Precio FROM Vehiculo";
+                "VEH_Matricula+' - '+VEH_Marca+' - '+VEH_Linea+' - '+VEH_Color AS VEH_Info,CAST(VEH_Precio AS VARCHAR) AS VEH_Precio FROM Vehiculo "+
+                "WHERE VEH_Matricula NOT IN (SELECT VEH_Matricula FROM Venta WHERE VTA_Estado='ACTIVA')";//Solo muestra vehiculos que no esten vendidos (Si la venta se anula, se libera el vehiculo)
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

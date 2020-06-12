@@ -38,7 +38,10 @@ namespace Vistas
 
           
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentas();
-            dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy"; 
+            dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            cantVentas.Text = "-";
+            cantVentasAnuladas.Text = "-";
+            importeTotal.Text = "-";
         }
 
         private void btnListarTodo_Click(object sender, EventArgs e)
@@ -48,8 +51,11 @@ namespace Vistas
 
         private void cbxListadoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString());
-           
+            InfoVenta infoVenta=new InfoVenta();
+            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString(),out infoVenta);
+            cantVentas.Text = infoVenta.CantidadVentas.ToString();
+            cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
+            importeTotal.Text = infoVenta.ImporteTotalVentas.ToString();
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";        //formateando fecha
             cbxListadoMarca.Text = "Seleccione...";   //volvemos al estado inicial de marcas
             
@@ -65,8 +71,8 @@ namespace Vistas
 
         private void btnListarFecha_Click(object sender, EventArgs e)
         {
-            DateTime inicio = dtpFechaInicio.Value;
-            DateTime fin = dtpFechaFin.Value;
+            DateTime inicio = dtpFechaInicio.Value.Date;
+            DateTime fin = dtpFechaFin.Value.Date;
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorFecha(inicio, fin);
             
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";

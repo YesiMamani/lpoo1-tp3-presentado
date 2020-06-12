@@ -35,6 +35,8 @@ namespace Vistas
         private void FrmListadoVehiculos_Load(object sender, EventArgs e)
         {
             dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
+            dgvVehiculos.Columns["TV_ID"].Visible = false;
+            dgvVehiculos.Columns["CV_ID"].Visible = false;
         }
     }
 }
