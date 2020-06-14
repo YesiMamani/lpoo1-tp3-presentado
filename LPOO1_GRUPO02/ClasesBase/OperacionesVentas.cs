@@ -175,7 +175,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT FP_ID AS Id, FP_Descripcion AS Descripcion  FROM FormaPago";
+            cmd.CommandText = "SELECT FP_ID AS ID, FP_Descripcion AS 'DESCRIPCION DE FORMA DE PAGO'  FROM FormaPago";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

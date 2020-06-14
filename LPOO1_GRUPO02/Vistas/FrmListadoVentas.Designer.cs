@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVentasRealizadas = new System.Windows.Forms.DataGridView();
             this.lblVentasRealizadas = new System.Windows.Forms.Label();
             this.cbxListadoCliente = new System.Windows.Forms.ComboBox();
@@ -59,26 +61,48 @@
             // 
             // dgvVentasRealizadas
             // 
+            this.dgvVentasRealizadas.AllowUserToAddRows = false;
+            this.dgvVentasRealizadas.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentasRealizadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvVentasRealizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVentasRealizadas.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentasRealizadas.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvVentasRealizadas.Location = new System.Drawing.Point(12, 198);
             this.dgvVentasRealizadas.Name = "dgvVentasRealizadas";
+            this.dgvVentasRealizadas.ReadOnly = true;
+            this.dgvVentasRealizadas.RowHeadersVisible = false;
             this.dgvVentasRealizadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVentasRealizadas.Size = new System.Drawing.Size(1076, 407);
+            this.dgvVentasRealizadas.Size = new System.Drawing.Size(1110, 407);
             this.dgvVentasRealizadas.TabIndex = 0;
             // 
             // lblVentasRealizadas
             // 
             this.lblVentasRealizadas.AutoSize = true;
-            this.lblVentasRealizadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVentasRealizadas.Font = new System.Drawing.Font("Arial Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblVentasRealizadas.ForeColor = System.Drawing.Color.White;
-            this.lblVentasRealizadas.Location = new System.Drawing.Point(344, 20);
+            this.lblVentasRealizadas.Location = new System.Drawing.Point(7, 10);
             this.lblVentasRealizadas.Name = "lblVentasRealizadas";
-            this.lblVentasRealizadas.Size = new System.Drawing.Size(390, 25);
+            this.lblVentasRealizadas.Size = new System.Drawing.Size(490, 40);
             this.lblVentasRealizadas.TabIndex = 1;
             this.lblVentasRealizadas.Text = "LISTADO DE VENTAS REALIZADAS";
             // 
             // cbxListadoCliente
             // 
+            this.cbxListadoCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxListadoCliente.FormattingEnabled = true;
             this.cbxListadoCliente.Location = new System.Drawing.Point(13, 39);
             this.cbxListadoCliente.Name = "cbxListadoCliente";
@@ -88,6 +112,7 @@
             // 
             // cbxListadoMarca
             // 
+            this.cbxListadoMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbxListadoMarca.FormattingEnabled = true;
             this.cbxListadoMarca.Location = new System.Drawing.Point(17, 37);
             this.cbxListadoMarca.Name = "cbxListadoMarca";
@@ -100,7 +125,7 @@
             this.gbxListadoMarca.Controls.Add(this.cbxListadoMarca);
             this.gbxListadoMarca.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxListadoMarca.ForeColor = System.Drawing.Color.White;
-            this.gbxListadoMarca.Location = new System.Drawing.Point(289, 83);
+            this.gbxListadoMarca.Location = new System.Drawing.Point(299, 83);
             this.gbxListadoMarca.Name = "gbxListadoMarca";
             this.gbxListadoMarca.Size = new System.Drawing.Size(212, 90);
             this.gbxListadoMarca.TabIndex = 6;
@@ -127,7 +152,7 @@
             this.gbxListarFecha.Controls.Add(this.lblInicio);
             this.gbxListarFecha.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbxListarFecha.ForeColor = System.Drawing.Color.White;
-            this.gbxListarFecha.Location = new System.Drawing.Point(566, 83);
+            this.gbxListarFecha.Location = new System.Drawing.Point(576, 83);
             this.gbxListarFecha.Name = "gbxListarFecha";
             this.gbxListarFecha.Size = new System.Drawing.Size(258, 90);
             this.gbxListarFecha.TabIndex = 8;
@@ -136,6 +161,7 @@
             // 
             // dtpFechaFin
             // 
+            this.dtpFechaFin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaFin.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaFin.Location = new System.Drawing.Point(134, 55);
@@ -145,6 +171,7 @@
             // 
             // dtpFechaInicio
             // 
+            this.dtpFechaInicio.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpFechaInicio.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaInicio.Location = new System.Drawing.Point(134, 25);
@@ -175,26 +202,28 @@
             // btnListarFecha
             // 
             this.btnListarFecha.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnListarFecha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListarFecha.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarFecha.ForeColor = System.Drawing.Color.White;
-            this.btnListarFecha.Location = new System.Drawing.Point(895, 83);
+            this.btnListarFecha.Location = new System.Drawing.Point(903, 83);
             this.btnListarFecha.Name = "btnListarFecha";
-            this.btnListarFecha.Size = new System.Drawing.Size(168, 32);
+            this.btnListarFecha.Size = new System.Drawing.Size(218, 40);
             this.btnListarFecha.TabIndex = 3;
-            this.btnListarFecha.Text = "Listar por Fecha";
+            this.btnListarFecha.Text = "LISTAR POR FECHA";
             this.btnListarFecha.UseVisualStyleBackColor = false;
             this.btnListarFecha.Click += new System.EventHandler(this.btnListarFecha_Click);
             // 
             // btnListarTodo
             // 
             this.btnListarTodo.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnListarTodo.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListarTodo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnListarTodo.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarTodo.ForeColor = System.Drawing.Color.White;
-            this.btnListarTodo.Location = new System.Drawing.Point(895, 138);
+            this.btnListarTodo.Location = new System.Drawing.Point(903, 138);
             this.btnListarTodo.Name = "btnListarTodo";
-            this.btnListarTodo.Size = new System.Drawing.Size(168, 33);
+            this.btnListarTodo.Size = new System.Drawing.Size(218, 40);
             this.btnListarTodo.TabIndex = 9;
-            this.btnListarTodo.Text = "Listar Todo";
+            this.btnListarTodo.Text = "LISTAR TODO";
             this.btnListarTodo.UseVisualStyleBackColor = false;
             this.btnListarTodo.Click += new System.EventHandler(this.btnListarTodo_Click);
             // 
@@ -203,17 +232,18 @@
             this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
             this.panel1.Controls.Add(this.btnCerrar);
             this.panel1.Controls.Add(this.lblVentasRealizadas);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1101, 61);
+            this.panel1.Size = new System.Drawing.Size(1132, 61);
             this.panel1.TabIndex = 10;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnCerrar.BackColor = System.Drawing.Color.Brown;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1038, 6);
+            this.btnCerrar.Location = new System.Drawing.Point(1076, 6);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(50, 46);
             this.btnCerrar.TabIndex = 11;
@@ -224,57 +254,58 @@
             // btnAnularVentaSeleccionada
             // 
             this.btnAnularVentaSeleccionada.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnAnularVentaSeleccionada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAnularVentaSeleccionada.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnularVentaSeleccionada.ForeColor = System.Drawing.Color.White;
-            this.btnAnularVentaSeleccionada.Location = new System.Drawing.Point(884, 611);
+            this.btnAnularVentaSeleccionada.Location = new System.Drawing.Point(889, 611);
             this.btnAnularVentaSeleccionada.Name = "btnAnularVentaSeleccionada";
-            this.btnAnularVentaSeleccionada.Size = new System.Drawing.Size(179, 33);
+            this.btnAnularVentaSeleccionada.Size = new System.Drawing.Size(233, 33);
             this.btnAnularVentaSeleccionada.TabIndex = 11;
-            this.btnAnularVentaSeleccionada.Text = "Anular Venta Seleccionada";
+            this.btnAnularVentaSeleccionada.Text = "ANULAR VENTA SELECCIONADA";
             this.btnAnularVentaSeleccionada.UseVisualStyleBackColor = false;
             this.btnAnularVentaSeleccionada.Click += new System.EventHandler(this.btnAnularVentaSeleccionada_Click);
             // 
             // lblCantVentas
             // 
             this.lblCantVentas.AutoSize = true;
-            this.lblCantVentas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantVentas.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantVentas.ForeColor = System.Drawing.Color.White;
             this.lblCantVentas.Location = new System.Drawing.Point(11, 620);
             this.lblCantVentas.Name = "lblCantVentas";
-            this.lblCantVentas.Size = new System.Drawing.Size(126, 15);
+            this.lblCantVentas.Size = new System.Drawing.Size(137, 17);
             this.lblCantVentas.TabIndex = 12;
             this.lblCantVentas.Text = "Cantidad de ventas:";
             // 
             // lblCantVentasAnuladas
             // 
             this.lblCantVentasAnuladas.AutoSize = true;
-            this.lblCantVentasAnuladas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantVentasAnuladas.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCantVentasAnuladas.ForeColor = System.Drawing.Color.White;
             this.lblCantVentasAnuladas.Location = new System.Drawing.Point(254, 620);
             this.lblCantVentasAnuladas.Name = "lblCantVentasAnuladas";
-            this.lblCantVentasAnuladas.Size = new System.Drawing.Size(199, 15);
+            this.lblCantVentasAnuladas.Size = new System.Drawing.Size(213, 17);
             this.lblCantVentasAnuladas.TabIndex = 13;
             this.lblCantVentasAnuladas.Text = "Cantidad de ventas ANULADAS:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(565, 620);
+            this.label1.Location = new System.Drawing.Point(561, 620);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 15);
+            this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 14;
             this.label1.Text = "Importe TOTAL de Ventas: $";
             // 
             // cantVentas
             // 
             this.cantVentas.AutoSize = true;
-            this.cantVentas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantVentas.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantVentas.ForeColor = System.Drawing.Color.White;
-            this.cantVentas.Location = new System.Drawing.Point(143, 620);
+            this.cantVentas.Location = new System.Drawing.Point(148, 620);
             this.cantVentas.Name = "cantVentas";
-            this.cantVentas.Size = new System.Drawing.Size(11, 15);
+            this.cantVentas.Size = new System.Drawing.Size(12, 17);
             this.cantVentas.TabIndex = 15;
             this.cantVentas.Text = "-";
             // 
@@ -283,7 +314,7 @@
             this.cantVentasAnuladas.AutoSize = true;
             this.cantVentasAnuladas.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantVentasAnuladas.ForeColor = System.Drawing.Color.White;
-            this.cantVentasAnuladas.Location = new System.Drawing.Point(458, 620);
+            this.cantVentasAnuladas.Location = new System.Drawing.Point(466, 620);
             this.cantVentasAnuladas.Name = "cantVentasAnuladas";
             this.cantVentasAnuladas.Size = new System.Drawing.Size(11, 15);
             this.cantVentasAnuladas.TabIndex = 16;
@@ -292,11 +323,11 @@
             // importeTotal
             // 
             this.importeTotal.AutoSize = true;
-            this.importeTotal.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importeTotal.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.importeTotal.ForeColor = System.Drawing.Color.White;
-            this.importeTotal.Location = new System.Drawing.Point(756, 620);
+            this.importeTotal.Location = new System.Drawing.Point(753, 620);
             this.importeTotal.Name = "importeTotal";
-            this.importeTotal.Size = new System.Drawing.Size(11, 15);
+            this.importeTotal.Size = new System.Drawing.Size(12, 17);
             this.importeTotal.TabIndex = 17;
             this.importeTotal.Text = "-";
             // 
@@ -305,7 +336,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1100, 650);
+            this.ClientSize = new System.Drawing.Size(1134, 650);
             this.Controls.Add(this.importeTotal);
             this.Controls.Add(this.cantVentasAnuladas);
             this.Controls.Add(this.cantVentas);

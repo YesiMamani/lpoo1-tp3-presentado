@@ -27,7 +27,7 @@ namespace Vistas
         {   //carco combo cliente
             cbxListadoCliente.DataSource = OperacionesClientes.TraerClientes();
             cbxListadoCliente.DisplayMember = "ApeyNom";
-            cbxListadoCliente.ValueMember = "CLI_DNI";
+            cbxListadoCliente.ValueMember = "DNI";
             cbxListadoCliente.Text = "Seleccione...";
 
             //cargo combo marcas

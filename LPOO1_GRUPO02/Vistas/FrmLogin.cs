@@ -29,6 +29,7 @@ namespace Vistas
             {
                 MessageBox.Show("Bienvenido al Sistema: " + oUsuario.Usu_apellidoNombre, "Bienvenida");
                 FrmPrincipal oFrmPrincipal = new FrmPrincipal(oUsuario);
+                this.Visible = false;
                 oFrmPrincipal.Show();
             }
             else

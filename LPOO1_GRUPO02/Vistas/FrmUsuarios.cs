@@ -41,6 +41,8 @@ namespace Vistas
             if (dgvUsuarios.CurrentRow != null)
             {
                 //Para que al seleccionar cada fila, se cargue automaticamente en el formulario
+                lblAgregar.Text = "Se encuentra seleccionado el Usuario ID: "+dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
+                lblAgregar.Visible = true;
                 txtID.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
                 txtUsuario.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
                 txtContrasenia.Text = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
@@ -55,25 +57,32 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Usuario oUsuario = new Usuario();
-            
-            //CAPTURO LOS DATOS DEL FORMULARIO
-            oUsuario.Usu_id = int.Parse(txtID.Text);
-            oUsuario.Usu_nombreUsuario = txtUsuario.Text;
-            oUsuario.Usu_contraseña = txtContrasenia.Text;
-            oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
-            oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
+            if (txtID.Text != "" && txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "")
+            {
+                Usuario oUsuario = new Usuario();
 
-            OperacionesUsuarios.ModificarUsuario(oUsuario);
+                //CAPTURO LOS DATOS DEL FORMULARIO
+                oUsuario.Usu_id = int.Parse(txtID.Text);
+                oUsuario.Usu_nombreUsuario = txtUsuario.Text;
+                oUsuario.Usu_contraseña = txtContrasenia.Text;
+                oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
+                oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
 
-            CargarGrilla();
+                OperacionesUsuarios.ModificarUsuario(oUsuario);
+
+                CargarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos");
+            } 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvUsuarios.CurrentRow != null)
             {
-                var respuesta = MessageBox.Show("¿Desea eliminar el usuario selecionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var respuesta = MessageBox.Show("¿Desea ELIMINAR el usuario seleccionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (respuesta.ToString() == "Yes")
                 {
                     int id = int.Parse(txtID.Text);
@@ -89,6 +98,8 @@ namespace Vistas
         {
             //Habilito el boton Agregar
             btnAgregar.Enabled = true;
+            lblAgregar.Text = "Ingrese los datos del nuevo usuario:";
+            lblAgregar.Visible = true;
             //Limpio los controles
             txtID.Clear();
             txtUsuario.Clear();
@@ -104,19 +115,34 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Usuario oUsuario = new Usuario();
-            //CAPTURO LOS DATOS DEL FORMULARIO
-            oUsuario.Usu_nombreUsuario = txtUsuario.Text;
-            oUsuario.Usu_contraseña = txtContrasenia.Text;
-            oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
-            oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
+            if (txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "")
+            {
+                Usuario oUsuario = new Usuario();
+                //CAPTURO LOS DATOS DEL FORMULARIO
+                oUsuario.Usu_nombreUsuario = txtUsuario.Text;
+                oUsuario.Usu_contraseña = txtContrasenia.Text;
+                oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
+                oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
 
-            var respuesta = MessageBox.Show("¿Desea guardar los datos ingresados?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (respuesta.ToString() == "Yes")
+                OperacionesUsuarios.AgregarUsuario(oUsuario);
+                lblAgregar.Visible = false;
 
-            OperacionesUsuarios.AgregarUsuario(oUsuario);
+                CargarGrilla();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos");
+            } 
+        }
 
-            CargarGrilla();
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -118,35 +118,32 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="vehiculo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\vehiculo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo_Volkswagen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo_Volkswagen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\venta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="childish_Key" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\childish_Key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="UserF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UserF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="golweb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\golweb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="passat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\passat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="poloweb" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\poloweb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="prueba" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\prueba.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="engranaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engranaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="childish_Key" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\childish_Key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vehiculo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vehiculo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="virtus_web" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\virtus-web.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shutdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="venta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\venta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addcard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addcard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Tcross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Tcross.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,13 +151,25 @@
   <data name="vento" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="virtus_web" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\virtus-web.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addcard" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addcard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo_Volkswagen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_Volkswagen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="engranaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\engranaje.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gear_set" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gear-set.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="golweb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\golweb.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\passat.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="system-shutdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\system-shutdown.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -103,6 +103,16 @@ namespace Vistas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gear_set {
+            get {
+                object obj = ResourceManager.GetObject("gear_set", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap golweb {
             get {
                 object obj = ResourceManager.GetObject("golweb", resourceCulture);
@@ -146,6 +156,26 @@ namespace Vistas.Properties {
         internal static System.Drawing.Bitmap prueba {
             get {
                 object obj = ResourceManager.GetObject("prueba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutdown {
+            get {
+                object obj = ResourceManager.GetObject("shutdown", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap system_shutdown {
+            get {
+                object obj = ResourceManager.GetObject("system-shutdown", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

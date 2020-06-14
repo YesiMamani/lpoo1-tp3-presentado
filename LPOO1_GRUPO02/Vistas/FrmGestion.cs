@@ -45,12 +45,15 @@ namespace Vistas
             {
                 case 0://Clases Vehiculo
                     dgvGestion.DataSource = OperacionesVehiculos.TraerClasesVehiculo();
+                    dgvGestion.AutoResizeColumns();
                     break;
                 case 1://Tipos Vehiculo
                     dgvGestion.DataSource = OperacionesVehiculos.TraerTiposVehiculo();
+                    dgvGestion.AutoResizeColumns();
                     break;
                 case 2://Formas Pago
                     dgvGestion.DataSource = OperacionesVentas.TraerFormasPago();
+                    dgvGestion.AutoResizeColumns();
                     break;
                 default:
                     dgvGestion.DataSource = OperacionesVehiculos.TraerClasesVehiculo();
@@ -118,6 +121,11 @@ namespace Vistas
                 btnModificar.Enabled = true;
                 btnNuevo.Enabled = true;
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

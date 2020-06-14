@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVehiculos = new System.Windows.Forms.DataGridView();
             this.btnAgregarVehiculo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -52,16 +54,43 @@
             this.chkGPS = new System.Windows.Forms.CheckBox();
             this.cbxTipoVehiculo = new System.Windows.Forms.ComboBox();
             this.cbxClaseVehiculo = new System.Windows.Forms.ComboBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvVehiculos
             // 
+            this.dgvVehiculos.AllowUserToAddRows = false;
+            this.dgvVehiculos.AllowUserToDeleteRows = false;
+            this.dgvVehiculos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVehiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVehiculos.Location = new System.Drawing.Point(8, 49);
+            this.dgvVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVehiculos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVehiculos.Location = new System.Drawing.Point(12, 129);
             this.dgvVehiculos.Name = "dgvVehiculos";
+            this.dgvVehiculos.ReadOnly = true;
+            this.dgvVehiculos.RowHeadersVisible = false;
             this.dgvVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculos.Size = new System.Drawing.Size(607, 459);
+            this.dgvVehiculos.Size = new System.Drawing.Size(769, 459);
             this.dgvVehiculos.TabIndex = 0;
             this.dgvVehiculos.CurrentCellChanged += new System.EventHandler(this.dgvVehiculos_CurrentCellChanged);
             // 
@@ -69,7 +98,8 @@
             // 
             this.btnAgregarVehiculo.BackgroundImage = global::Vistas.Properties.Resources.addcard;
             this.btnAgregarVehiculo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAgregarVehiculo.Location = new System.Drawing.Point(818, 12);
+            this.btnAgregarVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarVehiculo.Location = new System.Drawing.Point(998, 73);
             this.btnAgregarVehiculo.Name = "btnAgregarVehiculo";
             this.btnAgregarVehiculo.Size = new System.Drawing.Size(108, 75);
             this.btnAgregarVehiculo.TabIndex = 1;
@@ -78,168 +108,203 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(676, 481);
+            this.btnModificar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificar.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
+            this.btnModificar.Location = new System.Drawing.Point(803, 555);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(86, 23);
+            this.btnModificar.Size = new System.Drawing.Size(90, 33);
             this.btnModificar.TabIndex = 2;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(796, 481);
+            this.btnEliminar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(911, 555);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(88, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(90, 33);
             this.btnEliminar.TabIndex = 3;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblMAtricula
             // 
             this.lblMAtricula.AutoSize = true;
-            this.lblMAtricula.Location = new System.Drawing.Point(631, 135);
+            this.lblMAtricula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMAtricula.ForeColor = System.Drawing.Color.White;
+            this.lblMAtricula.Location = new System.Drawing.Point(797, 174);
             this.lblMAtricula.Name = "lblMAtricula";
-            this.lblMAtricula.Size = new System.Drawing.Size(50, 13);
+            this.lblMAtricula.Size = new System.Drawing.Size(75, 16);
             this.lblMAtricula.TabIndex = 4;
-            this.lblMAtricula.Text = "Matricula";
+            this.lblMAtricula.Text = "Matricula:";
             // 
             // lblMArca
             // 
             this.lblMArca.AutoSize = true;
-            this.lblMArca.Location = new System.Drawing.Point(631, 169);
+            this.lblMArca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMArca.ForeColor = System.Drawing.Color.White;
+            this.lblMArca.Location = new System.Drawing.Point(797, 208);
             this.lblMArca.Name = "lblMArca";
-            this.lblMArca.Size = new System.Drawing.Size(37, 13);
+            this.lblMArca.Size = new System.Drawing.Size(54, 16);
             this.lblMArca.TabIndex = 5;
-            this.lblMArca.Text = "Marca";
+            this.lblMArca.Text = "Marca:";
             // 
             // lblLinea
             // 
             this.lblLinea.AutoSize = true;
-            this.lblLinea.Location = new System.Drawing.Point(631, 203);
+            this.lblLinea.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLinea.ForeColor = System.Drawing.Color.White;
+            this.lblLinea.Location = new System.Drawing.Point(797, 242);
             this.lblLinea.Name = "lblLinea";
-            this.lblLinea.Size = new System.Drawing.Size(33, 13);
+            this.lblLinea.Size = new System.Drawing.Size(48, 16);
             this.lblLinea.TabIndex = 6;
-            this.lblLinea.Text = "Linea";
+            this.lblLinea.Text = "Linea:";
             // 
             // lblModelo
             // 
             this.lblModelo.AutoSize = true;
-            this.lblModelo.Location = new System.Drawing.Point(631, 237);
+            this.lblModelo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModelo.ForeColor = System.Drawing.Color.White;
+            this.lblModelo.Location = new System.Drawing.Point(797, 276);
             this.lblModelo.Name = "lblModelo";
-            this.lblModelo.Size = new System.Drawing.Size(42, 13);
+            this.lblModelo.Size = new System.Drawing.Size(61, 16);
             this.lblModelo.TabIndex = 7;
-            this.lblModelo.Text = "Modelo";
+            this.lblModelo.Text = "Modelo:";
             // 
             // lblColor
             // 
             this.lblColor.AutoSize = true;
-            this.lblColor.Location = new System.Drawing.Point(631, 271);
+            this.lblColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColor.ForeColor = System.Drawing.Color.White;
+            this.lblColor.Location = new System.Drawing.Point(797, 310);
             this.lblColor.Name = "lblColor";
-            this.lblColor.Size = new System.Drawing.Size(31, 13);
+            this.lblColor.Size = new System.Drawing.Size(48, 16);
             this.lblColor.TabIndex = 8;
-            this.lblColor.Text = "Color";
+            this.lblColor.Text = "Color:";
             // 
             // lblPuerta
             // 
             this.lblPuerta.AutoSize = true;
-            this.lblPuerta.Location = new System.Drawing.Point(631, 305);
+            this.lblPuerta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPuerta.ForeColor = System.Drawing.Color.White;
+            this.lblPuerta.Location = new System.Drawing.Point(797, 344);
             this.lblPuerta.Name = "lblPuerta";
-            this.lblPuerta.Size = new System.Drawing.Size(43, 13);
+            this.lblPuerta.Size = new System.Drawing.Size(64, 16);
             this.lblPuerta.TabIndex = 9;
-            this.lblPuerta.Text = "Puertas";
+            this.lblPuerta.Text = "Puertas:";
             // 
             // lblGPS
             // 
             this.lblGPS.AutoSize = true;
-            this.lblGPS.Location = new System.Drawing.Point(631, 339);
+            this.lblGPS.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGPS.ForeColor = System.Drawing.Color.White;
+            this.lblGPS.Location = new System.Drawing.Point(797, 378);
             this.lblGPS.Name = "lblGPS";
-            this.lblGPS.Size = new System.Drawing.Size(29, 13);
+            this.lblGPS.Size = new System.Drawing.Size(41, 16);
             this.lblGPS.TabIndex = 10;
-            this.lblGPS.Text = "GPS";
+            this.lblGPS.Text = "GPS:";
             // 
             // lblTipoVehiculo
             // 
             this.lblTipoVehiculo.AutoSize = true;
-            this.lblTipoVehiculo.Location = new System.Drawing.Point(631, 373);
+            this.lblTipoVehiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoVehiculo.ForeColor = System.Drawing.Color.White;
+            this.lblTipoVehiculo.Location = new System.Drawing.Point(797, 412);
             this.lblTipoVehiculo.Name = "lblTipoVehiculo";
-            this.lblTipoVehiculo.Size = new System.Drawing.Size(72, 13);
+            this.lblTipoVehiculo.Size = new System.Drawing.Size(104, 16);
             this.lblTipoVehiculo.TabIndex = 11;
-            this.lblTipoVehiculo.Text = "Tipo Vehiculo";
+            this.lblTipoVehiculo.Text = "Tipo Vehiculo:";
             // 
             // lblClaseVehiculo
             // 
             this.lblClaseVehiculo.AutoSize = true;
-            this.lblClaseVehiculo.Location = new System.Drawing.Point(631, 407);
+            this.lblClaseVehiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClaseVehiculo.ForeColor = System.Drawing.Color.White;
+            this.lblClaseVehiculo.Location = new System.Drawing.Point(797, 446);
             this.lblClaseVehiculo.Name = "lblClaseVehiculo";
-            this.lblClaseVehiculo.Size = new System.Drawing.Size(77, 13);
+            this.lblClaseVehiculo.Size = new System.Drawing.Size(112, 16);
             this.lblClaseVehiculo.TabIndex = 12;
-            this.lblClaseVehiculo.Text = "Clase Vehiculo";
+            this.lblClaseVehiculo.Text = "Clase Vehiculo:";
             // 
             // lblPrecio
             // 
             this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(631, 441);
+            this.lblPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio.ForeColor = System.Drawing.Color.White;
+            this.lblPrecio.Location = new System.Drawing.Point(797, 480);
             this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(37, 13);
+            this.lblPrecio.Size = new System.Drawing.Size(55, 16);
             this.lblPrecio.TabIndex = 13;
-            this.lblPrecio.Text = "Precio";
+            this.lblPrecio.Text = "Precio:";
             // 
             // txtMAtricula
             // 
             this.txtMAtricula.Enabled = false;
-            this.txtMAtricula.Location = new System.Drawing.Point(731, 135);
+            this.txtMAtricula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMAtricula.Location = new System.Drawing.Point(925, 182);
             this.txtMAtricula.Name = "txtMAtricula";
-            this.txtMAtricula.Size = new System.Drawing.Size(181, 20);
+            this.txtMAtricula.Size = new System.Drawing.Size(181, 23);
             this.txtMAtricula.TabIndex = 14;
             // 
             // txtMArca
             // 
-            this.txtMArca.Location = new System.Drawing.Point(731, 169);
+            this.txtMArca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMArca.Location = new System.Drawing.Point(925, 215);
             this.txtMArca.Name = "txtMArca";
-            this.txtMArca.Size = new System.Drawing.Size(181, 20);
+            this.txtMArca.Size = new System.Drawing.Size(181, 23);
             this.txtMArca.TabIndex = 15;
             // 
             // txtLinea
             // 
-            this.txtLinea.Location = new System.Drawing.Point(731, 203);
+            this.txtLinea.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLinea.Location = new System.Drawing.Point(925, 248);
             this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(181, 20);
+            this.txtLinea.Size = new System.Drawing.Size(181, 23);
             this.txtLinea.TabIndex = 16;
             // 
             // txtModelo
             // 
-            this.txtModelo.Location = new System.Drawing.Point(731, 237);
+            this.txtModelo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtModelo.Location = new System.Drawing.Point(925, 281);
             this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(181, 20);
+            this.txtModelo.Size = new System.Drawing.Size(181, 23);
             this.txtModelo.TabIndex = 17;
             // 
             // txtColor
             // 
-            this.txtColor.Location = new System.Drawing.Point(731, 271);
+            this.txtColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtColor.Location = new System.Drawing.Point(925, 314);
             this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(181, 20);
+            this.txtColor.Size = new System.Drawing.Size(181, 23);
             this.txtColor.TabIndex = 18;
             // 
             // txtPuertas
             // 
-            this.txtPuertas.Location = new System.Drawing.Point(731, 305);
+            this.txtPuertas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPuertas.Location = new System.Drawing.Point(925, 347);
             this.txtPuertas.Name = "txtPuertas";
-            this.txtPuertas.Size = new System.Drawing.Size(181, 20);
+            this.txtPuertas.Size = new System.Drawing.Size(181, 23);
             this.txtPuertas.TabIndex = 19;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(731, 438);
+            this.txtPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(925, 475);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(181, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(181, 23);
             this.txtPrecio.TabIndex = 22;
             // 
             // chkGPS
             // 
             this.chkGPS.AutoSize = true;
-            this.chkGPS.Location = new System.Drawing.Point(731, 339);
+            this.chkGPS.Location = new System.Drawing.Point(925, 380);
             this.chkGPS.Name = "chkGPS";
             this.chkGPS.Size = new System.Drawing.Size(15, 14);
             this.chkGPS.TabIndex = 23;
@@ -247,25 +312,81 @@
             // 
             // cbxTipoVehiculo
             // 
+            this.cbxTipoVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxTipoVehiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoVehiculo.FormattingEnabled = true;
-            this.cbxTipoVehiculo.Location = new System.Drawing.Point(731, 370);
+            this.cbxTipoVehiculo.Location = new System.Drawing.Point(925, 407);
             this.cbxTipoVehiculo.Name = "cbxTipoVehiculo";
-            this.cbxTipoVehiculo.Size = new System.Drawing.Size(181, 21);
+            this.cbxTipoVehiculo.Size = new System.Drawing.Size(181, 23);
             this.cbxTipoVehiculo.TabIndex = 24;
             // 
             // cbxClaseVehiculo
             // 
+            this.cbxClaseVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxClaseVehiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxClaseVehiculo.FormattingEnabled = true;
-            this.cbxClaseVehiculo.Location = new System.Drawing.Point(731, 398);
+            this.cbxClaseVehiculo.Location = new System.Drawing.Point(925, 441);
             this.cbxClaseVehiculo.Name = "cbxClaseVehiculo";
-            this.cbxClaseVehiculo.Size = new System.Drawing.Size(181, 21);
+            this.cbxClaseVehiculo.Size = new System.Drawing.Size(181, 23);
             this.cbxClaseVehiculo.TabIndex = 25;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Arial Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(12, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(362, 40);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "GESTION DE VEHICULOS";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.lblTitle);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1115, 60);
+            this.panel1.TabIndex = 26;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Brown;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Font = new System.Drawing.Font("Arial Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(1059, 7);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(50, 46);
+            this.btnCerrar.TabIndex = 21;
+            this.btnCerrar.Text = "X";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalir.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(1016, 555);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(90, 33);
+            this.btnSalir.TabIndex = 27;
+            this.btnSalir.Text = "SALIR";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 516);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.ClientSize = new System.Drawing.Size(1118, 600);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbxClaseVehiculo);
             this.Controls.Add(this.cbxTipoVehiculo);
             this.Controls.Add(this.chkGPS);
@@ -290,11 +411,14 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregarVehiculo);
             this.Controls.Add(this.dgvVehiculos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVehiculos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehiculos";
             this.Load += new System.EventHandler(this.FrmVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,5 +450,9 @@
         private System.Windows.Forms.CheckBox chkGPS;
         private System.Windows.Forms.ComboBox cbxTipoVehiculo;
         private System.Windows.Forms.ComboBox cbxClaseVehiculo;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
