@@ -17,7 +17,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT *,CLI_Apellido +', '+ CLI_nombre AS 'ApeyNom' FROM Cliente";
+            cmd.CommandText = "SELECT CLI_DNI AS DNI, CLI_Nombre AS NOMBRE, CLI_Apellido AS APELLIDO, CLI_Direccion AS DIRECCION, CLI_Telefono AS TELEFONO,CLI_Apellido +', '+ CLI_nombre AS 'ApeyNom' FROM Cliente";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -40,7 +40,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Cliente " +
+            cmd.CommandText = "SELECT CLI_DNI AS DNI, CLI_Nombre AS NOMBRE, CLI_Apellido AS APELLIDO, CLI_Direccion AS DIRECCION, CLI_Telefono AS TELEFONO FROM Cliente " +
                                 "WHERE CLI_Nombre LIKE @Filtro OR CLI_Apellido LIKE @Filtro";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -166,7 +166,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "TraerClientesOrdenadosPorApellido";
+            cmd.CommandText = "TraerClientesOrdenadosPorApellido";//ACTUALIZAR ESTE SP
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Connection = cnn;
 

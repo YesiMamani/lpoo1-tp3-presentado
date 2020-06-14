@@ -25,6 +25,7 @@ namespace Vistas
         private void CargarGrillaClientes()
         {
             dgvClientes.DataSource = OperacionesClientes.TraerClientes();
+            dgvClientes.Columns["ApeyNom"].Visible = false;
         }
 
        
@@ -88,6 +89,16 @@ namespace Vistas
         private void btnOrdenarApellido_Click(object sender, EventArgs e)
         {
             dgvClientes.DataSource = OperacionesClientes.TraerClientesOrdenadosPorApellidos();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

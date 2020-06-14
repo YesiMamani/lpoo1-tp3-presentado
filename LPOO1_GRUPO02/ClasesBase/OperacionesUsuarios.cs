@@ -20,7 +20,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Usuario";
+            cmd.CommandText = "SELECT USU_ID AS ID, USU_NombreUsuario AS [NOMBRE USUARIO], USU_Contraseña AS CONTRASEÑA, USU_ApellidoNombre AS [APELLIDO Y NOMBRE], ROL_Codigo AS [CODIGO ROL] FROM Usuario";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -46,7 +46,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Usuario WHERE USU_NombreUsuario LIKE @textoFiltro";
+            cmd.CommandText = "SELECT USU_ID AS ID, USU_NombreUsuario AS [NOMBRE USUARIO], USU_Contraseña AS CONTRASEÑA, USU_ApellidoNombre AS [APELLIDO Y NOMBRE], ROL_Codigo AS [CODIGO ROL] FROM Usuario WHERE USU_NombreUsuario LIKE @textoFiltro";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
             cmd.Parameters.AddWithValue("@textoFiltro", "%" + traer + "%");

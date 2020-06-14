@@ -37,50 +37,44 @@ namespace Vistas
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmClientes oFrmClientes = new FrmClientes();
-            oFrmClientes.Show();
+            
         }
 
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             var respuesta = MessageBox.Show("¿Desea salir del sistema?","Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (respuesta.ToString() == "Yes")
-            {
+            {                
                 Application.Exit(); //sale del sist     
-            }
-            
-            
-           
+            }  
         }
 
         private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmAltaVehiculo oFrmAltaVehiculi = new FrmAltaVehiculo();
-            //oFrmAltaVehiculi.Show();
+            
         }
 
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmUsuarios oFrmUsuarios = new FrmUsuarios();
-            oFrmUsuarios.Show();
+            
         }
 
         private void registroVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVentas oFrmVentas = new FrmVentas(myUser);
-            oFrmVentas.Show();
+            oFrmVentas.ShowDialog();
         }
 
         private void listadoVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListadoVentas oListadoVentas = new FrmListadoVentas();
-            oListadoVentas.Show();
+            oListadoVentas.ShowDialog();
         }
 
         private void listadoDeVehiculosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmListadoVehiculos oFrmListadoVehiculos = new FrmListadoVehiculos();
-            oFrmListadoVehiculos.Show();
+            oFrmListadoVehiculos.ShowDialog();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
@@ -135,7 +129,16 @@ namespace Vistas
             this.BackgroundImage = Vistas.Properties.Resources.Tcross;
         }
 
-       
-       
+        private void gestionDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmUsuarios oFrmUsuarios = new FrmUsuarios();
+            oFrmUsuarios.ShowDialog();
+        }
+
+        private void gestionDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmClientes oFrmClientes = new FrmClientes();
+            oFrmClientes.ShowDialog();
+        }
     }
 }

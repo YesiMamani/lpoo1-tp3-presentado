@@ -164,7 +164,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT CV_ID AS Id, CV_Descripcion AS Descripcion  FROM ClaseVehiculo";
+            cmd.CommandText = "SELECT CV_ID AS ID, CV_Descripcion AS 'DESCRIPCION CLASE DE VEHICULO'  FROM ClaseVehiculo";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -188,7 +188,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT TV_ID AS Id, TV_Descripcion AS Descripcion  FROM TipoVehiculo";
+            cmd.CommandText = "SELECT TV_ID AS ID, TV_Descripcion AS 'DESCRIPCION DE TIPO DE VEHICULO'  FROM TipoVehiculo";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

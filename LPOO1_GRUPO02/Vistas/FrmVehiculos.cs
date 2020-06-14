@@ -20,11 +20,11 @@ namespace Vistas
         private void FrmVehiculos_Load(object sender, EventArgs e)
         {
             cbxClaseVehiculo.DataSource = OperacionesVehiculos.TraerClasesVehiculo();
-            cbxClaseVehiculo.DisplayMember = "Descripcion";   //muestre la descripcion
+            cbxClaseVehiculo.DisplayMember = "DESCRIPCION CLASE DE VEHICULO";   //muestre la descripcion
             cbxClaseVehiculo.ValueMember = "Id";
 
             cbxTipoVehiculo.DataSource = OperacionesVehiculos.TraerTiposVehiculo();
-            cbxTipoVehiculo.DisplayMember = "Descripcion";
+            cbxTipoVehiculo.DisplayMember = "DESCRIPCION DE TIPO DE VEHICULO";
             cbxTipoVehiculo.ValueMember = "Id";
 
             CargarGrillaVehiculos();
@@ -34,7 +34,9 @@ namespace Vistas
         {
             dgvVehiculos.DataSource = OperacionesVehiculos.TraerVehiculosMarcaOrden("M");
             dgvVehiculos.Columns["TV_ID"].Visible = false;
-            dgvVehiculos.Columns["CV_ID"].Visible = false;
+            dgvVehiculos.Columns["CV_ID"].Visible = false;            
+            dgvVehiculos.AutoResizeColumns();
+                        
         }
 
         private void btnAgregarVehiculo_Click(object sender, EventArgs e)
@@ -89,6 +91,16 @@ namespace Vistas
             OperacionesVehiculos.ModificarVehiculo(oVehiculo);
 
             CargarGrillaVehiculos();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

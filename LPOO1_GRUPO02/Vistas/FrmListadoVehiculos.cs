@@ -38,5 +38,10 @@ namespace Vistas
             dgvVehiculos.Columns["TV_ID"].Visible = false;
             dgvVehiculos.Columns["CV_ID"].Visible = false;
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

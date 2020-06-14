@@ -23,15 +23,6 @@ namespace Vistas
           if(txtNombre.Text != "" && txtApellido.Text != "" && txtDni.Text !="" && txtDireccion.Text !="" && txtTelefono.Text !="")
             {
 
-              var respuesta=MessageBox.Show("¿Desea guardar los datos ingreados?\n"
-             +"\nNombre:"+ txtNombre.Text
-             +"\nApellido: "+ txtApellido.Text
-             + "\nDni: " + txtDni.Text
-             +"\nDireccion: " + txtDireccion.Text 
-             +"\nTelefono: " + txtTelefono.Text
-             , "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (respuesta.ToString() == "Yes")
-            {
                 Cliente oCliente = new Cliente();
                 oCliente.Cli_nombre = txtNombre.Text;
                 oCliente.Cli_apellido = txtApellido.Text;
@@ -40,17 +31,17 @@ namespace Vistas
                 oCliente.Cli_telefono = txtTelefono.Text;
 
                 OperacionesClientes.AgregarCliente(oCliente);
-
-                MessageBox.Show("Se guardaron los siguientes datos: \n"
-                  + "\nNombre:" + oCliente.Cli_nombre
-                 + "\nApellido: " + oCliente.Cli_apellido
-                 + "\nDni: " + oCliente.Cli_dni
-                 + "\nDireccion: " + oCliente.Cli_direccion
-                 + "\nTelefono: " + oCliente.Cli_telefono
-                   , "Confirmacion");
-
-                limpiarCampos();
-             }
+                
+              var respuesta=MessageBox.Show("Cliente agregado exitosamente!\n"
+             +"\n¿Desea agregar otro Cliente?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+              if (respuesta.ToString() == "Yes")
+              {
+                  limpiarCampos();
+              }
+              else
+              {
+                  this.Close();
+              }
           }
           else
           {
@@ -90,6 +81,11 @@ namespace Vistas
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
        
