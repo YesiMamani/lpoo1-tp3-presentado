@@ -40,8 +40,11 @@ namespace Vistas
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentas();
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";
             cantVentas.Text = "-";
+            cantVentasConfirmadas.Text = "-";
             cantVentasAnuladas.Text = "-";
             importeTotal.Text = "-";
+            importeConfirmado.Text = "-";
+            importeAnulado.Text = "-";
         }
 
         private void btnListarTodo_Click(object sender, EventArgs e)
@@ -55,7 +58,11 @@ namespace Vistas
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString(),out infoVenta); //
             cantVentas.Text = infoVenta.CantidadVentas.ToString();  //asigno valores
             cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
-            importeTotal.Text = infoVenta.ImporteTotalVentas.ToString();
+            cantVentasConfirmadas.Text = (infoVenta.CantidadVentas - infoVenta.CantidadVentasAnuladas).ToString();
+            importeTotal.Text = (infoVenta.ImporteTotalVentasConfirmadas + infoVenta.ImporteTotalVentasAnuladas).ToString();
+            importeConfirmado.Text = infoVenta.ImporteTotalVentasConfirmadas.ToString();
+            importeAnulado.Text = infoVenta.ImporteTotalVentasAnuladas.ToString();
+
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";        //formateando fecha
             cbxListadoMarca.Text = "Seleccione...";   //volvemos al estado inicial de marcas
             
@@ -98,5 +105,8 @@ namespace Vistas
                 }
             }
         }
+
+       
+       
     }
 }

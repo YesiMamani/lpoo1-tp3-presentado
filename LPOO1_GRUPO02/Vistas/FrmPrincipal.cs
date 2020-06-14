@@ -143,7 +143,11 @@ namespace Vistas
 
         private void pbxShutdown_Click(object sender, EventArgs e)
         {
-
+            var respuesta = MessageBox.Show("¿Desea salir del sistema?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (respuesta.ToString() == "Yes")
+            {
+                Application.Exit(); //sale del sist     
+            }
         }
     }
 }

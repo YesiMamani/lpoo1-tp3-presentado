@@ -84,7 +84,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA Ventas por cliente - Importe Total de Ventas Activas
             SqlCommand cmdIT = new SqlCommand();
-            cmdIT.CommandText = "SELECT ISNULL(SUM(PRECIO),0) AS 'ImporteTotal' FROM VistaVentas WHERE [DNI CLIENTE] = @clidni AND ESTADO='ACTIVA'";
+            cmdIT.CommandText = "SELECT ESTADO,ISNULL(SUM(PRECIO),0) AS 'ImporteTotal' FROM VistaVentas WHERE [DNI CLIENTE] = @clidni GROUP BY ESTADO";
             cmdIT.CommandType = CommandType.Text;
             cmdIT.Connection = cnn;
             //CONFIG PARAMETROS
@@ -108,7 +108,8 @@ namespace ClasesBase
             infoVenta = new InfoVenta();
             infoVenta.CantidadVentas = dtVentas.Rows.Count;
             infoVenta.CantidadVentasAnuladas = dtAnuladas.Rows.Count;
-            infoVenta.ImporteTotalVentas = dtImporteTotal.Rows.Count > 0 ? int.Parse(dtImporteTotal.Rows[0][0].ToString()) : 0;
+            infoVenta.ImporteTotalVentasConfirmadas = dtImporteTotal.Rows.Count > 0 ? int.Parse(dtImporteTotal.Rows[0][1].ToString()) : 0;
+            infoVenta.ImporteTotalVentasAnuladas = dtImporteTotal.Rows.Count == 2 ? int.Parse(dtImporteTotal.Rows[1][1].ToString()) : 0;
 
             //DEVOLVER LA TABLA
             return dtVentas;

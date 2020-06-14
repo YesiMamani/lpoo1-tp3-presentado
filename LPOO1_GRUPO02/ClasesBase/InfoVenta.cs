@@ -9,7 +9,8 @@ namespace ClasesBase
     {
         private int cantidadVentas;
         private int cantidadVentasAnuladas;
-        private decimal importeTotalVentas;
+        private decimal importeTotalVentasConfirmadas;
+        private decimal importeTotalVentasAnuladas;
 
         public int CantidadVentas
         {
@@ -23,10 +24,16 @@ namespace ClasesBase
             set { cantidadVentasAnuladas = value; }
         }
 
-        public decimal ImporteTotalVentas
+        public decimal ImporteTotalVentasConfirmadas
         {
-            get { return importeTotalVentas; }
-            set {importeTotalVentas = value; }
+            get { return importeTotalVentasConfirmadas; }
+            set {importeTotalVentasConfirmadas = value; }
+        }
+
+        public decimal ImporteTotalVentasAnuladas
+        {
+            get { return importeTotalVentasAnuladas; }
+            set { importeTotalVentasAnuladas = value; }
         }
     }
 }
