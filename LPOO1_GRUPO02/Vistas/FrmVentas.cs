@@ -40,7 +40,7 @@ namespace Vistas
             cmbPrecioFinal.ValueMember = "VEH_Matricula";
 
             cmbFormaDePago.DataSource = OperacionesVentas.TraerFormasPago();
-            cmbFormaDePago.DisplayMember = "Descripcion";
+            cmbFormaDePago.DisplayMember = "DESCRIPCION DE FORMA DE PAGO";
             cmbFormaDePago.ValueMember = "Id";
 
             dtpFechaDeCompra.Value = DateTime.Today;
@@ -75,9 +75,18 @@ namespace Vistas
                 oVenta.Vta_estado = "ACTIVA";
 
                 OperacionesVentas.AgregarVenta(oVenta);
-                MessageBox.Show("Venta Registrada");
-                InicializarCombos();       
-                LimpiarCampos();
+
+                var respuesta = MessageBox.Show("Venta registrada exitosamente!\n"
+             + "\n¿Desea registrar otra Venta?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (respuesta.ToString() == "Yes")
+                {
+                    InicializarCombos();
+                    LimpiarCampos();
+                }
+                else
+                {
+                    this.Close();
+                }                
             }
             else
             {

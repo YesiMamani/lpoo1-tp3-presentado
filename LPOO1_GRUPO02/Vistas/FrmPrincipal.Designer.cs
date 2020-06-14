@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeVehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,15 +39,16 @@
             this.registroVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionClasesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSalirPrincipal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pbxShutdown = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gestionDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxShutdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,6 +66,8 @@
             this.gestionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(50, 2, 0, 2);
+            this.menuStrip1.ShowItemToolTips = true;
             this.menuStrip1.Size = new System.Drawing.Size(1056, 150);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
@@ -75,10 +79,18 @@
             this.gestionDeUsuariosToolStripMenuItem});
             this.usuarioToolStripMenuItem.Image = global::Vistas.Properties.Resources.cliente;
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(151, 146);
+            this.usuarioToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(167, 146);
             this.usuarioToolStripMenuItem.Text = "Usuarios";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             this.usuarioToolStripMenuItem.MouseHover += new System.EventHandler(this.usuarioToolStripMenuItem_MouseHover);
+            // 
+            // gestionDeUsuariosToolStripMenuItem
+            // 
+            this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
+            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(319, 34);
+            this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
+            this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
             // 
             // vehiculosToolStripMenuItem
             // 
@@ -87,7 +99,8 @@
             this.listadoDeVehiculosToolStripMenuItem});
             this.vehiculosToolStripMenuItem.Image = global::Vistas.Properties.Resources.vehiculo;
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(161, 146);
+            this.vehiculosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(177, 146);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
             this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             this.vehiculosToolStripMenuItem.MouseHover += new System.EventHandler(this.vehiculosToolStripMenuItem_MouseHover);
@@ -113,7 +126,8 @@
             this.listadoVentasToolStripMenuItem});
             this.ventasToolStripMenuItem.Image = global::Vistas.Properties.Resources.venta;
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(128, 146);
+            this.ventasToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(144, 146);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.MouseHover += new System.EventHandler(this.ventasToolStripMenuItem_MouseHover);
             // 
@@ -137,10 +151,18 @@
             this.gestionDeClientesToolStripMenuItem});
             this.clientesToolStripMenuItem.Image = global::Vistas.Properties.Resources.UserF;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(143, 146);
+            this.clientesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(159, 146);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             this.clientesToolStripMenuItem.MouseHover += new System.EventHandler(this.clientesToolStripMenuItem_MouseHover);
+            // 
+            // gestionDeClientesToolStripMenuItem
+            // 
+            this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
+            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(311, 34);
+            this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
+            this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
             // gestionToolStripMenuItem
             // 
@@ -148,7 +170,8 @@
             this.gestionClasesToolStripMenuItem});
             this.gestionToolStripMenuItem.Image = global::Vistas.Properties.Resources.gear_set;
             this.gestionToolStripMenuItem.Name = "gestionToolStripMenuItem";
-            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(138, 146);
+            this.gestionToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
+            this.gestionToolStripMenuItem.Size = new System.Drawing.Size(154, 146);
             this.gestionToolStripMenuItem.Text = "Gestion";
             this.gestionToolStripMenuItem.MouseHover += new System.EventHandler(this.gestionToolStripMenuItem_MouseHover);
             // 
@@ -175,37 +198,37 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pbxShutdown);
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(110, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1056, 150);
             this.panel1.TabIndex = 2;
             // 
+            // pbxShutdown
+            // 
+            this.pbxShutdown.BackColor = System.Drawing.Color.RoyalBlue;
+            this.pbxShutdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbxShutdown.Image = global::Vistas.Properties.Resources.shutdown;
+            this.pbxShutdown.Location = new System.Drawing.Point(926, 32);
+            this.pbxShutdown.Name = "pbxShutdown";
+            this.pbxShutdown.Size = new System.Drawing.Size(83, 83);
+            this.pbxShutdown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxShutdown.TabIndex = 2;
+            this.pbxShutdown.TabStop = false;
+            this.pbxShutdown.Click += new System.EventHandler(this.pbxShutdown_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.RoyalBlue;
             this.pictureBox1.Image = global::Vistas.Properties.Resources.Logo_Volkswagen;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 150);
+            this.pictureBox1.Size = new System.Drawing.Size(156, 150);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
-            // gestionDeUsuariosToolStripMenuItem
-            // 
-            this.gestionDeUsuariosToolStripMenuItem.Name = "gestionDeUsuariosToolStripMenuItem";
-            this.gestionDeUsuariosToolStripMenuItem.Size = new System.Drawing.Size(319, 34);
-            this.gestionDeUsuariosToolStripMenuItem.Text = "Gestion de Usuarios";
-            this.gestionDeUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionDeUsuariosToolStripMenuItem_Click);
-            // 
-            // gestionDeClientesToolStripMenuItem
-            // 
-            this.gestionDeClientesToolStripMenuItem.Name = "gestionDeClientesToolStripMenuItem";
-            this.gestionDeClientesToolStripMenuItem.Size = new System.Drawing.Size(311, 34);
-            this.gestionDeClientesToolStripMenuItem.Text = "Gestion de Clientes";
-            this.gestionDeClientesToolStripMenuItem.Click += new System.EventHandler(this.gestionDeClientesToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
@@ -229,6 +252,7 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxShutdown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -252,5 +276,6 @@
         private System.Windows.Forms.ToolStripMenuItem gestionClasesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDeClientesToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbxShutdown;
     }
 }

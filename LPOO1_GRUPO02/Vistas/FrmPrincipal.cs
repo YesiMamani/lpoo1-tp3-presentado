@@ -140,5 +140,10 @@ namespace Vistas
             FrmClientes oFrmClientes = new FrmClientes();
             oFrmClientes.ShowDialog();
         }
+
+        private void pbxShutdown_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
