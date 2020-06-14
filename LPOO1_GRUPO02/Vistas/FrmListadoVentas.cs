@@ -51,9 +51,9 @@ namespace Vistas
 
         private void cbxListadoCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            InfoVenta infoVenta=new InfoVenta();
+            InfoVenta infoVenta=new InfoVenta();  //pto 6
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString(),out infoVenta); //
-            cantVentas.Text = infoVenta.CantidadVentas.ToString();
+            cantVentas.Text = infoVenta.CantidadVentas.ToString();  //asigno valores
             cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
             importeTotal.Text = infoVenta.ImporteTotalVentas.ToString();
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";        //formateando fecha
