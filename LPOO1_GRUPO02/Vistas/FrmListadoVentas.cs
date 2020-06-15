@@ -93,6 +93,7 @@ namespace Vistas
             DateTime fin = dtpFechaFin.Value.Date;
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorFecha(inicio, fin, out infoVenta);
 
+            cantVentas.Text = infoVenta.CantidadVentas.ToString();
             cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
             cantVentasConfirmadas.Text = (infoVenta.CantidadVentas - infoVenta.CantidadVentasAnuladas).ToString();
             importeTotal.Text = (infoVenta.ImporteTotalVentasConfirmadas + infoVenta.ImporteTotalVentasAnuladas).ToString("N0");
