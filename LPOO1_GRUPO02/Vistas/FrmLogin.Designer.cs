@@ -72,17 +72,19 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(117, 91);
+            this.txtUsuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(117, 100);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(233, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(233, 23);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasenia
             // 
-            this.txtContrasenia.Location = new System.Drawing.Point(117, 171);
+            this.txtContrasenia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.Location = new System.Drawing.Point(117, 160);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.PasswordChar = '*';
-            this.txtContrasenia.Size = new System.Drawing.Size(233, 20);
+            this.txtContrasenia.Size = new System.Drawing.Size(233, 23);
             this.txtContrasenia.TabIndex = 1;
             this.txtContrasenia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContrasenia_KeyPress);
             // 

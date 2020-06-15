@@ -108,9 +108,10 @@ namespace ClasesBase
             infoVenta = new InfoVenta();
             infoVenta.CantidadVentas = dtVentas.Rows.Count;
             infoVenta.CantidadVentasAnuladas = dtAnuladas.Rows.Count;
-            infoVenta.ImporteTotalVentasConfirmadas = dtImporteTotal.Rows.Count > 0 ? int.Parse(dtImporteTotal.Rows[0][1].ToString()) : 0;
+            infoVenta.ImporteTotalVentasConfirmadas = (dtImporteTotal.Rows.Count > 0 && dtImporteTotal.Rows[0][0].ToString()=="ACTIVA") ? int.Parse(dtImporteTotal.Rows[0][1].ToString()) : 0;
             infoVenta.ImporteTotalVentasAnuladas = dtImporteTotal.Rows.Count == 2 ? int.Parse(dtImporteTotal.Rows[1][1].ToString()) : 0;
-
+            //caso solo anuladas
+            infoVenta.ImporteTotalVentasAnuladas = (dtImporteTotal.Rows.Count == 1 && dtImporteTotal.Rows[0][0].ToString() == "ANULADA") ? int.Parse(dtImporteTotal.Rows[0][1].ToString()) : infoVenta.ImporteTotalVentasAnuladas;
             //DEVOLVER LA TABLA
             return dtVentas;
         }

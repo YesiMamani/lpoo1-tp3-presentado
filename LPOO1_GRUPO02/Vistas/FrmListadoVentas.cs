@@ -59,9 +59,9 @@ namespace Vistas
             cantVentas.Text = infoVenta.CantidadVentas.ToString();  //asigno valores
             cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
             cantVentasConfirmadas.Text = (infoVenta.CantidadVentas - infoVenta.CantidadVentasAnuladas).ToString();
-            importeTotal.Text = (infoVenta.ImporteTotalVentasConfirmadas + infoVenta.ImporteTotalVentasAnuladas).ToString();
-            importeConfirmado.Text = infoVenta.ImporteTotalVentasConfirmadas.ToString();
-            importeAnulado.Text = infoVenta.ImporteTotalVentasAnuladas.ToString();
+            importeTotal.Text = (infoVenta.ImporteTotalVentasConfirmadas + infoVenta.ImporteTotalVentasAnuladas).ToString("N0");
+            importeConfirmado.Text = infoVenta.ImporteTotalVentasConfirmadas.ToString("N0");
+            importeAnulado.Text = infoVenta.ImporteTotalVentasAnuladas.ToString("N0");
 
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";        //formateando fecha
             cbxListadoMarca.Text = "Seleccione...";   //volvemos al estado inicial de marcas
