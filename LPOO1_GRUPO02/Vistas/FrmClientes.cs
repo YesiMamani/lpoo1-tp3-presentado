@@ -46,14 +46,26 @@ namespace Vistas
         {
             if (dgvClientes.CurrentRow != null)
             {
-                 var respuesta = MessageBox.Show("¿Desea eliminar el cliente selecionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                 if (respuesta.ToString() == "Yes")
-                 {
-                     string dni = txtDNI.Text;
-                     OperacionesClientes.EliminarCliente(dni);
-                 }
+                //Valida si está en uso
+                int nroVenta = OperacionesVentas.TraerNROVentaPorCliente(txtDNI.Text);
+                if (nroVenta == 0)
+                {
+                    var respuesta = MessageBox.Show("¿Desea eliminar el cliente seleccionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (respuesta.ToString() == "Yes")
+                    {
+                        string dni = txtDNI.Text;
+                        OperacionesClientes.EliminarCliente(dni);
+                    }
 
-                CargarGrillaClientes();
+                    CargarGrillaClientes();
+                }
+                else
+                {
+                    MessageBox.Show("El cliente seleccionado NO se puede eliminar!\n"+
+                        "\nSe encuentra en uso en la Venta NRO: "+nroVenta
+                        ,"Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                 
             }
         }
 

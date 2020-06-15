@@ -56,6 +56,7 @@ namespace Vistas
         {
             InfoVenta infoVenta=new InfoVenta();  //pto 6
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorCliente(cbxListadoCliente.SelectedValue.ToString(),out infoVenta); //
+            
             cantVentas.Text = infoVenta.CantidadVentas.ToString();  //asigno valores
             cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
             cantVentasConfirmadas.Text = (infoVenta.CantidadVentas - infoVenta.CantidadVentasAnuladas).ToString();
@@ -70,7 +71,16 @@ namespace Vistas
 
         private void cbxListadoMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorMarca(cbxListadoMarca.SelectedValue.ToString());
+            InfoVenta infoVenta = new InfoVenta();  //pto 6
+            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorMarca(cbxListadoMarca.SelectedValue.ToString(), out infoVenta);
+
+            cantVentas.Text = infoVenta.CantidadVentas.ToString();  //asigno valores
+            cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
+            cantVentasConfirmadas.Text = (infoVenta.CantidadVentas - infoVenta.CantidadVentasAnuladas).ToString();
+            importeTotal.Text = (infoVenta.ImporteTotalVentasConfirmadas + infoVenta.ImporteTotalVentasAnuladas).ToString("N0");
+            importeConfirmado.Text = infoVenta.ImporteTotalVentasConfirmadas.ToString("N0");
+            importeAnulado.Text = infoVenta.ImporteTotalVentasAnuladas.ToString("N0");
+            
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";
             cbxListadoCliente.Text = "Seleccione...";
            
@@ -78,10 +88,17 @@ namespace Vistas
 
         private void btnListarFecha_Click(object sender, EventArgs e)
         {
+            InfoVenta infoVenta = new InfoVenta();  //pto 6
             DateTime inicio = dtpFechaInicio.Value.Date;
             DateTime fin = dtpFechaFin.Value.Date;
-            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorFecha(inicio, fin);
-            
+            dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentasPorFecha(inicio, fin, out infoVenta);
+
+            cantVentasAnuladas.Text = infoVenta.CantidadVentasAnuladas.ToString();
+            cantVentasConfirmadas.Text = (infoVenta.CantidadVentas - infoVenta.CantidadVentasAnuladas).ToString();
+            importeTotal.Text = (infoVenta.ImporteTotalVentasConfirmadas + infoVenta.ImporteTotalVentasAnuladas).ToString("N0");
+            importeConfirmado.Text = infoVenta.ImporteTotalVentasConfirmadas.ToString("N0");
+            importeAnulado.Text = infoVenta.ImporteTotalVentasAnuladas.ToString("N0");
+
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";
             cbxListadoCliente.Text = "Seleccione...";
             cbxListadoMarca.Text = "Seleccione...";
