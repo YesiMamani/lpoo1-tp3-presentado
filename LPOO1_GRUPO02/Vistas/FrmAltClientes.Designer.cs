@@ -67,6 +67,7 @@
             this.txtDni.Size = new System.Drawing.Size(149, 20);
             this.txtDni.TabIndex = 0;
             this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
+            this.txtDni.Leave += new System.EventHandler(this.txtDni_Leave);
             // 
             // txtDireccion
             // 

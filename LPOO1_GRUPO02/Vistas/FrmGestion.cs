@@ -110,19 +110,26 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            switch (cbxVer.SelectedIndex)
+            if (txtDescripcion.Text!="")
             {
-                case 0://Clases Vehiculo
-                    OperacionesVehiculos.ModificarClaseVehiculo(txtId.Text, txtDescripcion.Text);
-                    break;
-                case 1://Tipos Vehiculo
-                    OperacionesVehiculos.ModificarTipoVehiculo(txtId.Text, txtDescripcion.Text);
-                    break;
-                case 2://Formas Pago
-                    OperacionesVentas.ModificarFormaPago(txtId.Text, txtDescripcion.Text);
-                    break;
+                switch (cbxVer.SelectedIndex)
+                {
+                    case 0://Clases Vehiculo
+                        OperacionesVehiculos.ModificarClaseVehiculo(txtId.Text, txtDescripcion.Text);
+                        break;
+                    case 1://Tipos Vehiculo
+                        OperacionesVehiculos.ModificarTipoVehiculo(txtId.Text, txtDescripcion.Text);
+                        break;
+                    case 2://Formas Pago
+                        OperacionesVentas.ModificarFormaPago(txtId.Text, txtDescripcion.Text);
+                        break;
+                }
+                CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
             }
-            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+            else
+            {
+                MessageBox.Show("Debe ingresar una descripción!");
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -136,19 +143,26 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            switch (cbxVer.SelectedIndex)
+            if (txtDescripcion.Text!="")
             {
-                case 0://Clases Vehiculo
-                    OperacionesVehiculos.AgregarClaseVehiculo(txtDescripcion.Text);
-                    break;
-                case 1://Tipos Vehiculo
-                    OperacionesVehiculos.AgregarTipoVehiculo(txtDescripcion.Text);
-                    break;
-                case 2://Formas Pago
-                    OperacionesVentas.AgregarFormaPago(txtDescripcion.Text);
-                    break;
+                switch (cbxVer.SelectedIndex)
+                {
+                    case 0://Clases Vehiculo
+                        OperacionesVehiculos.AgregarClaseVehiculo(txtDescripcion.Text);
+                        break;
+                    case 1://Tipos Vehiculo
+                        OperacionesVehiculos.AgregarTipoVehiculo(txtDescripcion.Text);
+                        break;
+                    case 2://Formas Pago
+                        OperacionesVentas.AgregarFormaPago(txtDescripcion.Text);
+                        break;
+                }
+                CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
             }
-            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+            else
+            {
+                MessageBox.Show("Debe ingresar una descripción!");
+            }
         }
 
         private void cbxVer_SelectedIndexChanged(object sender, EventArgs e)  //carga la grila segun la opcion

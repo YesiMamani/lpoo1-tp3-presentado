@@ -12,6 +12,7 @@ namespace Vistas
 {
     public partial class FrmAltaVehiculo : Form
     {
+        string matriculaExistente = "";
         public FrmAltaVehiculo()
         {
             InitializeComponent();
@@ -21,32 +22,38 @@ namespace Vistas
         {
             if (txtMatricula.Text != "" && cbxMarca.Text != "" && txtLinea.Text != "" && cbxModelo.Text != "" && cbxColor.Text != "" && cbxPuertas.Text != "" && cbxTipoVehiculo.Text != "" && cbxClaseVehiculo.Text != "" && txtPrecio.Text != "")
             {
-                Vehiculo oVehiculo = new Vehiculo();
-                oVehiculo.Veh_matricula = txtMatricula.Text;
-                oVehiculo.Veh_marca = cbxMarca.Text;
-                oVehiculo.Veh_linea = txtLinea.Text;
-                oVehiculo.Veh_modelo = int.Parse(cbxModelo.Text);
-                oVehiculo.Veh_color = cbxColor.Text;
-                oVehiculo.Veh_puertas = int.Parse(cbxPuertas.Text);
-                oVehiculo.Veh_gps = chkGps.Checked;
-                oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
-                oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
-                oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
-
-                OperacionesVehiculos.AgregarVehiculo(oVehiculo);
-                
-                var respuesta = MessageBox.Show("Vehiculo agregado exitosamente!\n"
-                 + "\n¿Desea agregar otro Vehiculo? "               
-                 , "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (respuesta.ToString() == "Yes")
+                if (matriculaExistente=="")
                 {
-                    limpiarCampos();
+                    Vehiculo oVehiculo = new Vehiculo();
+                    oVehiculo.Veh_matricula = txtMatricula.Text;
+                    oVehiculo.Veh_marca = cbxMarca.Text;
+                    oVehiculo.Veh_linea = txtLinea.Text;
+                    oVehiculo.Veh_modelo = int.Parse(cbxModelo.Text);
+                    oVehiculo.Veh_color = cbxColor.Text;
+                    oVehiculo.Veh_puertas = int.Parse(cbxPuertas.Text);
+                    oVehiculo.Veh_gps = chkGps.Checked;
+                    oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
+                    oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
+                    oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
+
+                    OperacionesVehiculos.AgregarVehiculo(oVehiculo);
+
+                    var respuesta = MessageBox.Show("Vehiculo agregado exitosamente!\n"
+                     + "\n¿Desea agregar otro Vehiculo? "
+                     , "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (respuesta.ToString() == "Yes")
+                    {
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    this.Close();
+                    MessageBox.Show("La matricula: " + matriculaExistente + " Ya existe!\n\nPor favor Ingrese otra diferente.");
                 }
-
             }
             else
             {
@@ -117,7 +124,17 @@ namespace Vistas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            txtMatricula.Text = "";
             this.Close();
+        }
+
+        private void txtMatricula_Leave(object sender, EventArgs e)
+        {
+            matriculaExistente=OperacionesVehiculos.TraerMatriculaSegunParametro(txtMatricula.Text, "MATRICULA");
+            if (matriculaExistente!="")
+            {
+                MessageBox.Show("La matricula: "+ matriculaExistente +" Ya existe!\n\nPor favor Ingrese otra diferente.");                
+            }            
         }
     }
 }

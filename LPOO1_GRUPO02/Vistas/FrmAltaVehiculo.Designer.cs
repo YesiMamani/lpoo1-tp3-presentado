@@ -190,6 +190,7 @@
             this.txtMatricula.Name = "txtMatricula";
             this.txtMatricula.Size = new System.Drawing.Size(145, 23);
             this.txtMatricula.TabIndex = 0;
+            this.txtMatricula.Leave += new System.EventHandler(this.txtMatricula_Leave);
             // 
             // txtLinea
             // 

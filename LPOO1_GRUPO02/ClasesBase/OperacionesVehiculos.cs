@@ -346,7 +346,10 @@ namespace ClasesBase
                     break;
                 case "TIPO":
                     campoDB = "TV_ID";
-                    break;                
+                    break;
+                case "MATRICULA":
+                    campoDB = "VEH_Matricula";
+                    break; 
             }
             //CONEXION
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);

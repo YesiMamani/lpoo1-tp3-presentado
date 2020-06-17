@@ -12,6 +12,7 @@ namespace Vistas
 {
     public partial class FrmAltClientes : Form
     {
+        string dniExistente = "";
         public FrmAltClientes()
         {
             InitializeComponent();
@@ -22,26 +23,33 @@ namespace Vistas
 
           if(txtNombre.Text != "" && txtApellido.Text != "" && txtDni.Text !="" && txtDireccion.Text !="" && txtTelefono.Text !="")
             {
+                if (dniExistente == "")
+                {
+                    Cliente oCliente = new Cliente();
+                    oCliente.Cli_nombre = txtNombre.Text;
+                    oCliente.Cli_apellido = txtApellido.Text;
+                    oCliente.Cli_dni = txtDni.Text;
+                    oCliente.Cli_direccion = txtDireccion.Text;
+                    oCliente.Cli_telefono = txtTelefono.Text;
 
-                Cliente oCliente = new Cliente();
-                oCliente.Cli_nombre = txtNombre.Text;
-                oCliente.Cli_apellido = txtApellido.Text;
-                oCliente.Cli_dni = txtDni.Text;
-                oCliente.Cli_direccion = txtDireccion.Text;
-                oCliente.Cli_telefono = txtTelefono.Text;
+                    OperacionesClientes.AgregarCliente(oCliente);
 
-                OperacionesClientes.AgregarCliente(oCliente);
-                
-              var respuesta=MessageBox.Show("Cliente agregado exitosamente!\n"
-             +"\n¿Desea agregar otro Cliente?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-              if (respuesta.ToString() == "Yes")
-              {
-                  limpiarCampos();
-              }
-              else
-              {
-                  this.Close();
-              }
+                    var respuesta = MessageBox.Show("Cliente agregado exitosamente!\n"
+                   + "\n¿Desea agregar otro Cliente?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (respuesta.ToString() == "Yes")
+                    {
+                        limpiarCampos();
+                    }
+                    else
+                    {
+                        this.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("El DNI Ingresado: " + dniExistente + " Ya existe!\n\nPor favor Ingrese otro diferente.");
+                    txtDni.Focus();
+                }
           }
           else
           {
@@ -88,8 +96,13 @@ namespace Vistas
             this.Close();
         }
 
-       
-
-
+        private void txtDni_Leave(object sender, EventArgs e)
+        {
+            dniExistente = OperacionesClientes.TraerDniSegunParametro(txtDni.Text);
+            if (dniExistente != "")
+            {
+                MessageBox.Show("El DNI Ingresado: " + dniExistente + " Ya existe!\n\nPor favor Ingrese otro diferente.");                
+            }   
+        }
     }
 }

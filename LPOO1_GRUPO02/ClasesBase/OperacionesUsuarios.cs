@@ -198,6 +198,36 @@ namespace ClasesBase
 
             return oUser;
         }
+
+        public static int TraerIdUsuarioSegunNombreUsuario(string nombreUsuario)
+        {
+            int idUsuario = 0;            
+
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA Venta por CLIENTE
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT USU_ID as IdUsuario FROM Usuario WHERE USU_NombreUsuario = @parametro";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@parametro", nombreUsuario);     //configuramos el parametro q enviamos
+
+            //CREACION DE LA TABLA
+            DataTable dtUsuarios = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLAS
+            da.Fill(dtUsuarios);
+
+            idUsuario = dtUsuarios.Rows.Count > 0 ? int.Parse(dtUsuarios.Rows[0][0].ToString()) : 0;
+
+            //DEVOLVER ID USUARIO
+            return idUsuario;
+        }
     }
 }
     

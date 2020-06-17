@@ -182,5 +182,35 @@ namespace ClasesBase
             //DEVOLVER LA TABLA
             return dt;
         }
+
+        public static string TraerDniSegunParametro(string parametro)
+        {
+            string dniExistente = "";
+            
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA MAtricula segun campoDB
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select CLI_DNI as DNI FROM Cliente WHERE CLI_DNI = @parametro";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@parametro", parametro);     //configuramos el parametro q enviamos
+
+            //CREACION DE LA TABLA
+            DataTable dtClientes = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLAS
+            da.Fill(dtClientes);
+
+            dniExistente = dtClientes.Rows.Count > 0 ? dtClientes.Rows[0][0].ToString() : "";
+
+            //DEVUELVO matricula
+            return dniExistente;
+        }
     }
 }

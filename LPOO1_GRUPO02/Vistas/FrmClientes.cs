@@ -71,17 +71,24 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Cliente oCliente = new Cliente();
-            //CAPTURO LOS DATOS DEL FORMULARIO
-            oCliente.Cli_dni = txtDNI.Text;
-            oCliente.Cli_nombre = txtNombre.Text;
-            oCliente.Cli_apellido = txtApellido.Text;
-            oCliente.Cli_direccion = txtDireccion.Text;
-            oCliente.Cli_telefono = txtTelefono.Text;
+            if (txtNombre.Text != "" && txtApellido.Text != "" && txtDNI.Text != "" && txtDireccion.Text != "" && txtTelefono.Text != "")
+            {
+                Cliente oCliente = new Cliente();
+                //CAPTURO LOS DATOS DEL FORMULARIO
+                oCliente.Cli_dni = txtDNI.Text;
+                oCliente.Cli_nombre = txtNombre.Text;
+                oCliente.Cli_apellido = txtApellido.Text;
+                oCliente.Cli_direccion = txtDireccion.Text;
+                oCliente.Cli_telefono = txtTelefono.Text;
 
-            OperacionesClientes.ModificarCliente(oCliente);
+                OperacionesClientes.ModificarCliente(oCliente);
 
-            CargarGrillaClientes();
+                CargarGrillaClientes();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos");
+            }
         }
 
         private void btnAddCliente_Click(object sender, EventArgs e)

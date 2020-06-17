@@ -92,21 +92,28 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Vehiculo oVehiculo = new Vehiculo();
-            oVehiculo.Veh_matricula = txtMAtricula.Text;
-            oVehiculo.Veh_marca = cbxMarca.Text;
-            oVehiculo.Veh_linea = txtLinea.Text;
-            oVehiculo.Veh_modelo = int.Parse(cbxModelo.Text);
-            oVehiculo.Veh_color = cbxColor.Text;
-            oVehiculo.Veh_puertas = int.Parse(cbxPuertas.Text);
-            oVehiculo.Veh_gps = chkGPS.Checked;
-            oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
-            oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
-            oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
+            if (txtMAtricula.Text != "" && cbxMarca.Text != "" && txtLinea.Text != "" && cbxModelo.Text != "" && cbxColor.Text != "" && cbxPuertas.Text != "" && cbxTipoVehiculo.Text != "" && cbxClaseVehiculo.Text != "" && txtPrecio.Text != "")
+            {
+                Vehiculo oVehiculo = new Vehiculo();
+                oVehiculo.Veh_matricula = txtMAtricula.Text;
+                oVehiculo.Veh_marca = cbxMarca.Text;
+                oVehiculo.Veh_linea = txtLinea.Text;
+                oVehiculo.Veh_modelo = int.Parse(cbxModelo.Text);
+                oVehiculo.Veh_color = cbxColor.Text;
+                oVehiculo.Veh_puertas = int.Parse(cbxPuertas.Text);
+                oVehiculo.Veh_gps = chkGPS.Checked;
+                oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
+                oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
+                oVehiculo.Veh_precio = decimal.Parse(txtPrecio.Text);
 
-            OperacionesVehiculos.ModificarVehiculo(oVehiculo);
+                OperacionesVehiculos.ModificarVehiculo(oVehiculo);
 
-            CargarGrillaVehiculos();
+                CargarGrillaVehiculos();
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos");
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

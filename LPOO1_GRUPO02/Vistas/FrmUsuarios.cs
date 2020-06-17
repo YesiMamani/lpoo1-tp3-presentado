@@ -12,6 +12,7 @@ namespace Vistas
 {
     public partial class FrmUsuarios : Form
     {
+        int idUsuarioExistente = 0;
         public FrmUsuarios()
         {
             InitializeComponent();
@@ -59,18 +60,26 @@ namespace Vistas
         {
             if (txtID.Text != "" && txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "")
             {
-                Usuario oUsuario = new Usuario();
+                if (idUsuarioExistente == 0)
+                {
+                    Usuario oUsuario = new Usuario();
 
-                //CAPTURO LOS DATOS DEL FORMULARIO
-                oUsuario.Usu_id = int.Parse(txtID.Text);
-                oUsuario.Usu_nombreUsuario = txtUsuario.Text;
-                oUsuario.Usu_contraseña = txtContrasenia.Text;
-                oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
-                oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
+                    //CAPTURO LOS DATOS DEL FORMULARIO
+                    oUsuario.Usu_id = int.Parse(txtID.Text);
+                    oUsuario.Usu_nombreUsuario = txtUsuario.Text;
+                    oUsuario.Usu_contraseña = txtContrasenia.Text;
+                    oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
+                    oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
 
-                OperacionesUsuarios.ModificarUsuario(oUsuario);
+                    OperacionesUsuarios.ModificarUsuario(oUsuario);
 
-                CargarGrilla();
+                    CargarGrilla();
+                }
+                else
+                {
+                    MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.");
+                    txtUsuario.Focus();
+                }
             }
             else
             {
@@ -117,17 +126,26 @@ namespace Vistas
         {
             if (txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "")
             {
-                Usuario oUsuario = new Usuario();
-                //CAPTURO LOS DATOS DEL FORMULARIO
-                oUsuario.Usu_nombreUsuario = txtUsuario.Text;
-                oUsuario.Usu_contraseña = txtContrasenia.Text;
-                oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
-                oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
+                if (idUsuarioExistente==0)
+                {
+                    Usuario oUsuario = new Usuario();
+                    //CAPTURO LOS DATOS DEL FORMULARIO
+                    oUsuario.Usu_nombreUsuario = txtUsuario.Text;
+                    oUsuario.Usu_contraseña = txtContrasenia.Text;
+                    oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
+                    oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
 
-                OperacionesUsuarios.AgregarUsuario(oUsuario);
-                lblAgregar.Visible = false;
+                    OperacionesUsuarios.AgregarUsuario(oUsuario);
+                    lblAgregar.Visible = false;
 
-                CargarGrilla();
+                    CargarGrilla();
+                }
+                else
+                {
+                    MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.");
+                    txtUsuario.Focus();
+                }
+                
             }
             else
             {
@@ -143,6 +161,15 @@ namespace Vistas
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            idUsuarioExistente = OperacionesUsuarios.TraerIdUsuarioSegunNombreUsuario(txtUsuario.Text);
+            if (idUsuarioExistente!=0)
+            {
+                MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: "+idUsuarioExistente.ToString()+"\n\nPor favor ingrese otro diferente.");
+            }
         }
     }
 }
