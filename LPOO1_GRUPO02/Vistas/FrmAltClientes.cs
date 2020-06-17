@@ -48,7 +48,7 @@ namespace Vistas
                 else
                 {
                     MessageBox.Show("El DNI Ingresado: " + dniExistente + " Ya existe!\n\nPor favor Ingrese otro diferente.");
-                    txtDni.Focus();
+                    //txtDni.Focus();
                 }
           }
           else
