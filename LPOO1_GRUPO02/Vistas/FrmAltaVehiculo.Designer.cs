@@ -40,11 +40,7 @@
             this.lblTipoVehiculo = new System.Windows.Forms.Label();
             this.lblClaseVehiculo = new System.Windows.Forms.Label();
             this.txtMatricula = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtLinea = new System.Windows.Forms.TextBox();
-            this.txtModelo = new System.Windows.Forms.TextBox();
-            this.txtColor = new System.Windows.Forms.TextBox();
-            this.txtPuertas = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
             this.chkGps = new System.Windows.Forms.CheckBox();
@@ -53,6 +49,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.cbxMarca = new System.Windows.Forms.ComboBox();
+            this.cbxColor = new System.Windows.Forms.ComboBox();
+            this.cbxModelo = new System.Windows.Forms.ComboBox();
+            this.cbxPuertas = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -185,53 +185,26 @@
             // 
             // txtMatricula
             // 
+            this.txtMatricula.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatricula.Location = new System.Drawing.Point(200, 94);
             this.txtMatricula.Name = "txtMatricula";
-            this.txtMatricula.Size = new System.Drawing.Size(145, 20);
+            this.txtMatricula.Size = new System.Drawing.Size(145, 23);
             this.txtMatricula.TabIndex = 0;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(200, 136);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(145, 20);
-            this.txtMarca.TabIndex = 1;
             // 
             // txtLinea
             // 
+            this.txtLinea.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLinea.Location = new System.Drawing.Point(200, 178);
             this.txtLinea.Name = "txtLinea";
-            this.txtLinea.Size = new System.Drawing.Size(145, 20);
+            this.txtLinea.Size = new System.Drawing.Size(145, 23);
             this.txtLinea.TabIndex = 2;
-            // 
-            // txtModelo
-            // 
-            this.txtModelo.Location = new System.Drawing.Point(200, 220);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(145, 20);
-            this.txtModelo.TabIndex = 3;
-            this.txtModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtModelo_KeyPress);
-            // 
-            // txtColor
-            // 
-            this.txtColor.Location = new System.Drawing.Point(200, 262);
-            this.txtColor.Name = "txtColor";
-            this.txtColor.Size = new System.Drawing.Size(145, 20);
-            this.txtColor.TabIndex = 4;
-            // 
-            // txtPuertas
-            // 
-            this.txtPuertas.Location = new System.Drawing.Point(200, 304);
-            this.txtPuertas.Name = "txtPuertas";
-            this.txtPuertas.Size = new System.Drawing.Size(145, 20);
-            this.txtPuertas.TabIndex = 5;
-            this.txtPuertas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPuertas_KeyPress);
             // 
             // txtPrecio
             // 
+            this.txtPrecio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecio.Location = new System.Drawing.Point(200, 468);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(145, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(145, 23);
             this.txtPrecio.TabIndex = 9;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
@@ -258,19 +231,21 @@
             // cbxTipoVehiculo
             // 
             this.cbxTipoVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxTipoVehiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipoVehiculo.FormattingEnabled = true;
             this.cbxTipoVehiculo.Location = new System.Drawing.Point(200, 382);
             this.cbxTipoVehiculo.Name = "cbxTipoVehiculo";
-            this.cbxTipoVehiculo.Size = new System.Drawing.Size(145, 21);
+            this.cbxTipoVehiculo.Size = new System.Drawing.Size(145, 23);
             this.cbxTipoVehiculo.TabIndex = 7;
             // 
             // cbxClaseVehiculo
             // 
             this.cbxClaseVehiculo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbxClaseVehiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxClaseVehiculo.FormattingEnabled = true;
             this.cbxClaseVehiculo.Location = new System.Drawing.Point(200, 425);
             this.cbxClaseVehiculo.Name = "cbxClaseVehiculo";
-            this.cbxClaseVehiculo.Size = new System.Drawing.Size(145, 21);
+            this.cbxClaseVehiculo.Size = new System.Drawing.Size(145, 23);
             this.cbxClaseVehiculo.TabIndex = 8;
             // 
             // panel1
@@ -308,23 +283,95 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "ALTA VEHICULO";
             // 
+            // cbxMarca
+            // 
+            this.cbxMarca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMarca.FormattingEnabled = true;
+            this.cbxMarca.Items.AddRange(new object[] {
+            "Chevrolet",
+            "Fiat",
+            "Ford",
+            "Peugeot",
+            "Renault",
+            "Toyota",
+            "Volkswagen"});
+            this.cbxMarca.Location = new System.Drawing.Point(200, 136);
+            this.cbxMarca.Name = "cbxMarca";
+            this.cbxMarca.Size = new System.Drawing.Size(145, 23);
+            this.cbxMarca.TabIndex = 24;
+            // 
+            // cbxColor
+            // 
+            this.cbxColor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxColor.FormattingEnabled = true;
+            this.cbxColor.Items.AddRange(new object[] {
+            "Amarillo",
+            "Azul",
+            "Blanco",
+            "Gris",
+            "Negro",
+            "Rojo",
+            "Verde"});
+            this.cbxColor.Location = new System.Drawing.Point(200, 262);
+            this.cbxColor.Name = "cbxColor";
+            this.cbxColor.Size = new System.Drawing.Size(145, 23);
+            this.cbxColor.TabIndex = 25;
+            // 
+            // cbxModelo
+            // 
+            this.cbxModelo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxModelo.FormattingEnabled = true;
+            this.cbxModelo.Items.AddRange(new object[] {
+            "2020",
+            "2019",
+            "2018",
+            "2017",
+            "2016",
+            "2015",
+            "2014",
+            "2013",
+            "2012",
+            "2011",
+            "2010"});
+            this.cbxModelo.Location = new System.Drawing.Point(200, 220);
+            this.cbxModelo.Name = "cbxModelo";
+            this.cbxModelo.Size = new System.Drawing.Size(145, 23);
+            this.cbxModelo.TabIndex = 26;
+            this.cbxModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxModelo_KeyPress);
+            // 
+            // cbxPuertas
+            // 
+            this.cbxPuertas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxPuertas.FormattingEnabled = true;
+            this.cbxPuertas.Items.AddRange(new object[] {
+            "5",
+            "4",
+            "3",
+            "2",
+            "1"});
+            this.cbxPuertas.Location = new System.Drawing.Point(200, 304);
+            this.cbxPuertas.Name = "cbxPuertas";
+            this.cbxPuertas.Size = new System.Drawing.Size(145, 23);
+            this.cbxPuertas.TabIndex = 27;
+            this.cbxPuertas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbxPuertas_KeyPress);
+            // 
             // FrmAltaVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(402, 600);
+            this.Controls.Add(this.cbxPuertas);
+            this.Controls.Add(this.cbxModelo);
+            this.Controls.Add(this.cbxColor);
+            this.Controls.Add(this.cbxMarca);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cbxClaseVehiculo);
             this.Controls.Add(this.cbxTipoVehiculo);
             this.Controls.Add(this.chkGps);
             this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtPuertas);
-            this.Controls.Add(this.txtColor);
-            this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.txtLinea);
-            this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.lblClaseVehiculo);
             this.Controls.Add(this.lblTipoVehiculo);
@@ -363,11 +410,7 @@
         private System.Windows.Forms.Label lblTipoVehiculo;
         private System.Windows.Forms.Label lblClaseVehiculo;
         private System.Windows.Forms.TextBox txtMatricula;
-        private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtLinea;
-        private System.Windows.Forms.TextBox txtModelo;
-        private System.Windows.Forms.TextBox txtColor;
-        private System.Windows.Forms.TextBox txtPuertas;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.CheckBox chkGps;
@@ -376,5 +419,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.ComboBox cbxMarca;
+        private System.Windows.Forms.ComboBox cbxColor;
+        private System.Windows.Forms.ComboBox cbxModelo;
+        private System.Windows.Forms.ComboBox cbxPuertas;
     }
 }

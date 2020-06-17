@@ -340,19 +340,32 @@ namespace ClasesBase
             cnn.Close();
         }
 
-        public static int TraerNROVentaPorCliente(string cliDni)
+        public static int TraerNROVentaSegunParametro(string parametro, string campoDondeBuscar)
         {
             int nroVenta = 0;
+            string campoDB="";
+            switch (campoDondeBuscar)
+            {
+                case "DNI":
+                        campoDB="CLI_DNI";
+                        break;
+                case "MATRICULA":
+                        campoDB = "VEH_Matricula";
+                        break;
+                case "FORMAPAGO":
+                        campoDB = "FP_ID";
+                        break;                
+            }
             //CONEXION
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
 
             //CONFIGURACION DE LA CONSULTA Venta por CLIENTE
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT NRO FROM VistaVentas WHERE [DNI CLIENTE] = @clidni";   //filtro la vista por dni cliente
+            cmd.CommandText = "SELECT VTA_ID as NROVenta FROM Venta WHERE " + campoDB + " = @parametro";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
             //CONFIG PARAMETROS
-            cmd.Parameters.AddWithValue("@clidni", cliDni);     //cofiguramos el parametro q enviamos
+            cmd.Parameters.AddWithValue("@parametro", parametro);     //configuramos el parametro q enviamos
 
             //CREACION DE LA TABLA
             DataTable dtVentas = new DataTable();

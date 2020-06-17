@@ -19,15 +19,15 @@ namespace Vistas
 
         private void btnAceptarVehiculo_Click(object sender, EventArgs e)
         {
-            if (txtMatricula.Text !="" && txtMarca.Text != "" && txtLinea.Text != "" && txtModelo.Text != "" && txtColor.Text != "" && txtPuertas.Text != "" && cbxTipoVehiculo.Text != "" && cbxClaseVehiculo.Text != "" && txtPrecio.Text != "")
+            if (txtMatricula.Text != "" && cbxMarca.Text != "" && txtLinea.Text != "" && cbxModelo.Text != "" && cbxColor.Text != "" && cbxPuertas.Text != "" && cbxTipoVehiculo.Text != "" && cbxClaseVehiculo.Text != "" && txtPrecio.Text != "")
             {
                 Vehiculo oVehiculo = new Vehiculo();
                 oVehiculo.Veh_matricula = txtMatricula.Text;
-                oVehiculo.Veh_marca = txtMarca.Text;
+                oVehiculo.Veh_marca = cbxMarca.Text;
                 oVehiculo.Veh_linea = txtLinea.Text;
-                oVehiculo.Veh_modelo = int.Parse(txtModelo.Text);
-                oVehiculo.Veh_color = txtColor.Text;
-                oVehiculo.Veh_puertas = int.Parse(txtPuertas.Text);
+                oVehiculo.Veh_modelo = int.Parse(cbxModelo.Text);
+                oVehiculo.Veh_color = cbxColor.Text;
+                oVehiculo.Veh_puertas = int.Parse(cbxPuertas.Text);
                 oVehiculo.Veh_gps = chkGps.Checked;
                 oVehiculo.Veh_tipoVehiculo = (int)cbxTipoVehiculo.SelectedValue;
                 oVehiculo.Veh_claseVehiculo = (int)cbxClaseVehiculo.SelectedValue;
@@ -59,11 +59,11 @@ namespace Vistas
         private void limpiarCampos()
         {
                 txtMatricula.Clear();
-                txtMarca.Clear();
+                cbxMarca.Text = "";
                 txtLinea.Clear();
-                txtModelo.Clear();
-                txtColor.Clear();
-                txtPuertas.Clear();
+                cbxModelo.Text = "";
+                cbxColor.Text = "";
+                cbxPuertas.Text = "";
                 chkGps.Checked=false;
                 cbxClaseVehiculo.Text="";
                 cbxTipoVehiculo.Text="";
@@ -74,7 +74,7 @@ namespace Vistas
             this.Close();
         }
 
-        private void txtModelo_KeyPress(object sender, KeyPressEventArgs e)//cree un evento en propiedades del campo, doble clic keypress 
+        private void cbxModelo_KeyPress(object sender, KeyPressEventArgs e)//cree un evento en propiedades del campo, doble clic keypress 
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back)) //para q valide y aparezca el cartelito
             {
@@ -84,7 +84,7 @@ namespace Vistas
             }
         }
 
-        private void txtPuertas_KeyPress(object sender, KeyPressEventArgs e)
+        private void cbxPuertas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             {

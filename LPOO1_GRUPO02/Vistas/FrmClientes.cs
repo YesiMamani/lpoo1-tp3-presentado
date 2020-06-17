@@ -47,7 +47,7 @@ namespace Vistas
             if (dgvClientes.CurrentRow != null)
             {
                 //Valida si está en uso
-                int nroVenta = OperacionesVentas.TraerNROVentaPorCliente(txtDNI.Text);
+                int nroVenta = OperacionesVentas.TraerNROVentaSegunParametro(txtDNI.Text,"DNI");
                 if (nroVenta == 0)
                 {
                     var respuesta = MessageBox.Show("¿Desea eliminar el cliente seleccionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -111,6 +111,16 @@ namespace Vistas
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

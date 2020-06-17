@@ -334,5 +334,44 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static string TraerMatriculaSegunParametro(string parametro, string campoDondeBuscar)
+        {
+            string matricula = "";
+            string campoDB = "";
+            switch (campoDondeBuscar)
+            {
+                case "CLASE":
+                    campoDB = "CV_ID";
+                    break;
+                case "TIPO":
+                    campoDB = "TV_ID";
+                    break;                
+            }
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA MAtricula segun campoDB
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "Select VEH_Matricula as Matricula FROM Vehiculo WHERE " + campoDB + " = @parametro";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@parametro", parametro);     //configuramos el parametro q enviamos
+
+            //CREACION DE LA TABLA
+            DataTable dtVehiculos = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLAS
+            da.Fill(dtVehiculos);
+
+            matricula = dtVehiculos.Rows.Count > 0 ? dtVehiculos.Rows[0][0].ToString() : "";
+
+            //DEVUELVO matricula
+            return matricula;
+        }
     }
 }

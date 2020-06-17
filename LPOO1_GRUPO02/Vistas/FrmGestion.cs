@@ -24,16 +24,62 @@ namespace Vistas
 
         private void btnEliminarSeleccionado_Click(object sender, EventArgs e)
         {
+            string matricula = "";
             switch (cbxVer.SelectedIndex)
             {
                 case 0://Clases Vehiculo
-                    OperacionesVehiculos.EliminarClaseVehiculo(txtId.Text);
+                    //Valida si está en uso
+                    matricula = OperacionesVehiculos.TraerMatriculaSegunParametro(txtId.Text, "CLASE");
+                    if (matricula == "")
+                    {
+                        var respuesta = MessageBox.Show("¿Desea eliminar la Clase de Vehiculo seleccionada?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (respuesta.ToString() == "Yes")
+                        {
+                            OperacionesVehiculos.EliminarClaseVehiculo(txtId.Text);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Clase de Vehiculo seleccionada NO se puede eliminar!\n" +
+                            "\nSe encuentra en uso en el Vehiculo con Matricula: " + matricula
+                            , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }                       
                     break;
                 case 1://Tipos Vehiculo
-                    OperacionesVehiculos.EliminarTipoVehiculo(txtId.Text);
+                    //Valida si está en uso
+                    matricula = OperacionesVehiculos.TraerMatriculaSegunParametro(txtId.Text, "TIPO");
+                    if (matricula == "")
+                    {
+                        var respuesta = MessageBox.Show("¿Desea eliminar Tipo de Vehiculo seleccionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (respuesta.ToString() == "Yes")
+                        {
+                            OperacionesVehiculos.EliminarTipoVehiculo(txtId.Text);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Tipo de Vehiculo seleccionado NO se puede eliminar!\n" +
+                            "\nSe encuentra en uso en el Vehiculo con Matricula: " + matricula
+                            , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }                       
                     break;
                 case 2://Formas Pago
-                    OperacionesVentas.EliminarFormaPago(txtId.Text);
+                    //Valida si está en uso
+                    int nroVenta = OperacionesVentas.TraerNROVentaSegunParametro(txtId.Text, "FORMAPAGO");
+                    if (nroVenta == 0)
+                    {
+                        var respuesta = MessageBox.Show("¿Desea eliminar la Forma de Pago seleccionada?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (respuesta.ToString() == "Yes")
+                        {                            
+                            OperacionesVentas.EliminarFormaPago(txtId.Text);
+                        }                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("La Forma de Pago seleccionada NO se puede eliminar!\n" +
+                            "\nSe encuentra en uso en la Venta NRO: " + nroVenta
+                            , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }                    
                     break;
             }
             CargarGrillaSegunOpcion(cbxVer.SelectedIndex);

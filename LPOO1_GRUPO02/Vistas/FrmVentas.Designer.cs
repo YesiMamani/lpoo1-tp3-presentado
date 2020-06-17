@@ -43,8 +43,8 @@
             this.cmbPrecioFinal = new System.Windows.Forms.ComboBox();
             this.dtpFechaDeCompra = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,6 +188,7 @@
             this.cmbPrecioFinal.Name = "cmbPrecioFinal";
             this.cmbPrecioFinal.Size = new System.Drawing.Size(233, 23);
             this.cmbPrecioFinal.TabIndex = 13;
+            this.cmbPrecioFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPrecioFinal_KeyPress);
             // 
             // dtpFechaDeCompra
             // 
@@ -209,17 +210,6 @@
             this.panel1.Size = new System.Drawing.Size(533, 58);
             this.panel1.TabIndex = 21;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Arial Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(12, 10);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(283, 40);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "REGISTRAR VENTA";
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Brown;
@@ -233,6 +223,17 @@
             this.btnCerrar.Text = "X";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Arial Narrow", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(12, 10);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(283, 40);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "REGISTRAR VENTA";
             // 
             // FrmVentas
             // 
