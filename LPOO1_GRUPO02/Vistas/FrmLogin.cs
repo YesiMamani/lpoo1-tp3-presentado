@@ -27,10 +27,17 @@ namespace Vistas
 
             if (oUsuario != null)
             {
-                MessageBox.Show("Bienvenido al Sistema: " + oUsuario.Usu_apellidoNombre, "Bienvenida");
-                FrmPrincipal oFrmPrincipal = new FrmPrincipal(oUsuario);
-                this.Visible = false;
-                oFrmPrincipal.Show();
+                if (oUsuario.Usu_estado == "ACTIVO")
+                {
+                    MessageBox.Show("Bienvenido al Sistema: " + oUsuario.Usu_apellidoNombre, "Bienvenida");
+                    FrmPrincipal oFrmPrincipal = new FrmPrincipal(oUsuario); //me da acceso al principal
+                    this.Visible = false;
+                    oFrmPrincipal.Show();  
+                }
+                else
+                {
+                    MessageBox.Show("NO PUEDE INGRESAR AL SISTEMA \n\n EL USUARIO SE ENCUENTRA INACTIVO!");  
+                }
             }
             else
             {
@@ -66,17 +73,16 @@ namespace Vistas
             btnSalir.BackColor = Color.Gray;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void txtContrasenia_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13)
+            if (e.KeyChar == (char)13)   //si la tecla presionada es enter
             {
-                btnIngresar.PerformClick();
+                btnIngresar.PerformClick(); //click al boton ingresar
             }
         }
+
+       
     }
 }

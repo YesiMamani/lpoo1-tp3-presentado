@@ -35,11 +35,7 @@ namespace Vistas
             }
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         private void btnSalirPrincipal_Click(object sender, EventArgs e)
         {
             var respuesta = MessageBox.Show("¿Desea salir del sistema?","Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -49,16 +45,7 @@ namespace Vistas
             }  
         }
 
-        private void vehiculosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+      
         private void registroVentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmVentas oFrmVentas = new FrmVentas(myUser);
@@ -77,16 +64,7 @@ namespace Vistas
             oFrmListadoVehiculos.ShowDialog();
         }
 
-        private void FrmPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
+        //cambio la imag de fondo de formulario segun la opc al pasar el puntero
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
             this.BackgroundImage = Vistas.Properties.Resources.virtus_web;

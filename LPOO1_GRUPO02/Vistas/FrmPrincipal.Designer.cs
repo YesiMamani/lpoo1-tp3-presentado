@@ -71,7 +71,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1056, 150);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            
             // 
             // usuarioToolStripMenuItem
             // 
@@ -82,7 +82,6 @@
             this.usuarioToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
             this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(167, 146);
             this.usuarioToolStripMenuItem.Text = "Usuarios";
-            this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             this.usuarioToolStripMenuItem.MouseHover += new System.EventHandler(this.usuarioToolStripMenuItem_MouseHover);
             // 
             // gestionDeUsuariosToolStripMenuItem
@@ -102,7 +101,6 @@
             this.vehiculosToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
             this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(177, 146);
             this.vehiculosToolStripMenuItem.Text = "Vehiculos";
-            this.vehiculosToolStripMenuItem.Click += new System.EventHandler(this.vehiculosToolStripMenuItem_Click);
             this.vehiculosToolStripMenuItem.MouseHover += new System.EventHandler(this.vehiculosToolStripMenuItem_MouseHover);
             // 
             // gestionDeVehiculosToolStripMenuItem
@@ -154,7 +152,6 @@
             this.clientesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(4, 0, 20, 0);
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(159, 146);
             this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             this.clientesToolStripMenuItem.MouseHover += new System.EventHandler(this.clientesToolStripMenuItem_MouseHover);
             // 
             // gestionDeClientesToolStripMenuItem
@@ -247,7 +244,6 @@
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Principal";
-            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);

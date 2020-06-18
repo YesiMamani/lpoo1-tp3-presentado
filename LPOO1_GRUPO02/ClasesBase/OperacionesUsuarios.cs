@@ -194,6 +194,7 @@ namespace ClasesBase
                 oUser.Usu_id = dr.GetInt32(0);
                 oUser.Usu_apellidoNombre = dr.GetString(3);
                 oUser.Rol_codigo = dr.GetString(4);
+                oUser.Usu_estado = dr.GetString(5);
             }
             else
             {
