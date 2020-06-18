@@ -12,6 +12,7 @@ namespace Vistas
 {
     public partial class FrmGestion : Form
     {
+        int idExistente = 0;
         public FrmGestion()
         {
             InitializeComponent();
@@ -115,16 +116,43 @@ namespace Vistas
                 switch (cbxVer.SelectedIndex)
                 {
                     case 0://Clases Vehiculo
-                        OperacionesVehiculos.ModificarClaseVehiculo(txtId.Text, txtDescripcion.Text);
+                        idExistente = OperacionesVehiculos.TraerIDsegunParametro(txtDescripcion.Text,"CLASE");
+                        if (idExistente==0)
+                        {
+                            OperacionesVehiculos.ModificarClaseVehiculo(txtId.Text, txtDescripcion.Text);
+                            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("La descripcion de Clase ingresada ya existe en ID: " + idExistente + "!\n\nPor favor ingrese una diferente.");
+                        }
                         break;
                     case 1://Tipos Vehiculo
-                        OperacionesVehiculos.ModificarTipoVehiculo(txtId.Text, txtDescripcion.Text);
+                        idExistente = OperacionesVehiculos.TraerIDsegunParametro(txtDescripcion.Text,"TIPO");
+                        if (idExistente==0)
+                        {
+                            OperacionesVehiculos.ModificarTipoVehiculo(txtId.Text, txtDescripcion.Text);
+                            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("La descripcion de Tipo ingresada ya existe en ID: " + idExistente + "!\n\nPor favor ingrese una diferente.");
+                        }
                         break;
                     case 2://Formas Pago
-                        OperacionesVentas.ModificarFormaPago(txtId.Text, txtDescripcion.Text);
+                         idExistente = OperacionesVentas.TraerIDsegunParametro(txtDescripcion.Text);
+                        if (idExistente == 0)
+                        {   
+                            OperacionesVentas.ModificarFormaPago(txtId.Text, txtDescripcion.Text);
+                            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("La descripcion de Forma de Pago ingresada ya existe en ID: " + idExistente + "!\n\nPor favor ingrese una diferente.");
+                        }
                         break;
                 }
-                CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                
             }
             else
             {
@@ -148,16 +176,42 @@ namespace Vistas
                 switch (cbxVer.SelectedIndex)
                 {
                     case 0://Clases Vehiculo
-                        OperacionesVehiculos.AgregarClaseVehiculo(txtDescripcion.Text);
+                        idExistente = OperacionesVehiculos.TraerIDsegunParametro(txtDescripcion.Text,"CLASE");
+                        if (idExistente==0)
+                        {
+                            OperacionesVehiculos.AgregarClaseVehiculo(txtDescripcion.Text);
+                            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("La descripcion de Clase ingresada ya existe en ID: "+idExistente+"!\n\nPor favor ingrese una diferente.");
+                        }                                                
                         break;
                     case 1://Tipos Vehiculo
-                        OperacionesVehiculos.AgregarTipoVehiculo(txtDescripcion.Text);
+                        idExistente = OperacionesVehiculos.TraerIDsegunParametro(txtDescripcion.Text,"TIPO");
+                        if (idExistente==0)
+                        {
+                            OperacionesVehiculos.AgregarTipoVehiculo(txtDescripcion.Text);
+                            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("La descripcion de Tipo ingresada ya existe en ID: " + idExistente + "!\n\nPor favor ingrese una diferente.");
+                        }
                         break;
                     case 2://Formas Pago
-                        OperacionesVentas.AgregarFormaPago(txtDescripcion.Text);
+                        idExistente = OperacionesVentas.TraerIDsegunParametro(txtDescripcion.Text);
+                        if (idExistente == 0)
+                        {
+                            OperacionesVentas.AgregarFormaPago(txtDescripcion.Text);
+                            CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                        }
+                        else
+                        {
+                            MessageBox.Show("La descripcion de Forma de Pago ingresada ya existe en ID: " + idExistente + "!\n\nPor favor ingrese una diferente.");
+                        }
                         break;
-                }
-                CargarGrillaSegunOpcion(cbxVer.SelectedIndex);
+                }                
             }
             else
             {

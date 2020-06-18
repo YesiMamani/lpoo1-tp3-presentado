@@ -376,5 +376,44 @@ namespace ClasesBase
             //DEVUELVO matricula
             return matricula;
         }
+
+        public static int TraerIDsegunParametro(string parametro, string opcion)
+        {
+            int idExistente = 0;
+            string query = "";
+            switch (opcion)
+            {
+                case "CLASE":
+                    query = "SELECT CV_ID AS ID FROM ClaseVehiculo WHERE CV_Descripcion=@parametro";
+                    break;
+                case "TIPO":
+                    query = "SELECT TV_ID AS ID FROM TipoVehiculo WHERE TV_Descripcion=@parametro";
+                    break;                 
+            }
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA MAtricula segun campoDB
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = query;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@parametro", parametro);     //configuramos el parametro q enviamos
+
+            //CREACION DE LA TABLA
+            DataTable dtVehiculos = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLAS
+            da.Fill(dtVehiculos);
+
+            idExistente = dtVehiculos.Rows.Count > 0 ? int.Parse(dtVehiculos.Rows[0][0].ToString()) : 0;
+
+            //DEVUELVO matricula
+            return idExistente;
+        }
     }
 }

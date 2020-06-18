@@ -381,5 +381,34 @@ namespace ClasesBase
             //DEVOLVER LA TABLA
             return nroVenta;
         }
+
+        public static int TraerIDsegunParametro(string parametro)
+        {
+            int idExistente = 0;            
+            //CONEXION
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);
+
+            //CONFIGURACION DE LA CONSULTA 
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT FP_ID AS ID FROM FormaPago WHERE FP_Descripcion=@parametro";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+            //CONFIG PARAMETROS
+            cmd.Parameters.AddWithValue("@parametro", parametro);     //configuramos el parametro q enviamos
+
+            //CREACION DE LA TABLA
+            DataTable dtFormaPagos = new DataTable();
+
+            //CREACION DEL ADAPTADOR
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            //LLENAR LA TABLAS
+            da.Fill(dtFormaPagos);
+
+            idExistente = dtFormaPagos.Rows.Count > 0 ? int.Parse(dtFormaPagos.Rows[0][0].ToString()) : 0;
+
+            //DEVUELVO matricula
+            return idExistente;
+        }
     }
 }

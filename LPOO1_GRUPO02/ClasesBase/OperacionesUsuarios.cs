@@ -20,7 +20,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT USU_ID AS ID, USU_NombreUsuario AS [NOMBRE USUARIO], USU_Contraseña AS CONTRASEÑA, USU_ApellidoNombre AS [APELLIDO Y NOMBRE], ROL_Codigo AS [CODIGO ROL] FROM Usuario";
+            cmd.CommandText = "SELECT USU_ID AS ID, USU_NombreUsuario AS [NOMBRE USUARIO], USU_Contraseña AS CONTRASEÑA, USU_ApellidoNombre AS [APELLIDO Y NOMBRE], ROL_Codigo AS [CODIGO ROL], USU_Estado AS ESTADO FROM Usuario";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -46,7 +46,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT USU_ID AS ID, USU_NombreUsuario AS [NOMBRE USUARIO], USU_Contraseña AS CONTRASEÑA, USU_ApellidoNombre AS [APELLIDO Y NOMBRE], ROL_Codigo AS [CODIGO ROL] FROM Usuario WHERE USU_NombreUsuario LIKE @textoFiltro";
+            cmd.CommandText = "SELECT USU_ID AS ID, USU_NombreUsuario AS [NOMBRE USUARIO], USU_Contraseña AS CONTRASEÑA, USU_ApellidoNombre AS [APELLIDO Y NOMBRE], ROL_Codigo AS [CODIGO ROL], USU_estado AS ESTADO FROM Usuario WHERE USU_NombreUsuario LIKE @textoFiltro";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
             cmd.Parameters.AddWithValue("@textoFiltro", "%" + traer + "%");
@@ -72,7 +72,7 @@ namespace ClasesBase
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "UPDATE Usuario " +
                                 "set " +
-                                "usu_nombreusuario=@usuario, usu_contraseña=@contra, usu_apellidonombre=@apeynom, rol_codigo=@rolcod " +
+                                "usu_nombreusuario=@usuario, usu_contraseña=@contra, usu_apellidonombre=@apeynom, rol_codigo=@rolcod, usu_estado=@estado " +
                                 "WHERE usu_id=@id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
@@ -83,6 +83,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@contra", oUsuario.Usu_contraseña);
             cmd.Parameters.AddWithValue("@apeynom", oUsuario.Usu_apellidoNombre);
             cmd.Parameters.AddWithValue("@rolcod", oUsuario.Rol_codigo);
+            cmd.Parameters.AddWithValue("@estado", oUsuario.Usu_estado);
 
             //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
             cnn.Open();
@@ -115,6 +116,10 @@ namespace ClasesBase
             return dt;
         }
 
+        /// <summary>
+        /// Realiza BAJA LOGICA
+        /// </summary>
+        /// <param name="id"></param>
         public static void EliminarUsuario(int id)
         {
             //CONEXION
@@ -122,8 +127,9 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "DELETE FROM Usuario " +
-                                "WHERE USU_id =@id";
+            cmd.CommandText = "UPDATE Usuario " +
+                                "SET usu_estado='INACTIVO' " +
+                                "WHERE usu_id=@id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -143,9 +149,9 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA - INSERT
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "INSERT INTO Usuario (usu_nombreusuario, usu_contraseña, usu_apellidonombre, rol_codigo)" +
+            cmd.CommandText = "INSERT INTO Usuario (usu_nombreusuario, usu_contraseña, usu_apellidonombre, rol_codigo, usu_estado)" +
                                 " VALUES " +
-                                "(@usuario, @contra, @apeynom, @codrol)";
+                                "(@usuario, @contra, @apeynom, @codrol, @estado)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -154,6 +160,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@contra", oUsuario.Usu_contraseña);
             cmd.Parameters.AddWithValue("@apeynom", oUsuario.Usu_apellidoNombre);
             cmd.Parameters.AddWithValue("@codrol", oUsuario.Rol_codigo);
+            cmd.Parameters.AddWithValue("@estado", oUsuario.Usu_estado);
 
             //ABRIMOS LA CONEXION EJECUTAMOS LA QUERY Y CERRAMOS LA CONEXION
             cnn.Open();

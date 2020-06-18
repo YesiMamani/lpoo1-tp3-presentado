@@ -12,6 +12,13 @@ namespace ClasesBase
         private string usu_contraseña;
         private string usu_apellidoNombre;
         private string rol_codigo;
+        private string usu_estado;
+
+        public string Usu_estado
+        {
+            get { return usu_estado; }
+            set { usu_estado = value; }
+        }
 
         public string Rol_codigo
         {

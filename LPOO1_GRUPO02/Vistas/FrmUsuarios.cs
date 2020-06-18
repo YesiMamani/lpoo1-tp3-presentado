@@ -49,6 +49,7 @@ namespace Vistas
                 txtContrasenia.Text = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
                 txtApellidoNombre.Text = dgvUsuarios.CurrentRow.Cells[3].Value.ToString();
                 cbxRol.SelectedValue = dgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+                cbxEstado.Text = dgvUsuarios.CurrentRow.Cells[5].Value.ToString();
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = true;
                 btnModificar.Enabled = true;
@@ -58,7 +59,7 @@ namespace Vistas
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (txtID.Text != "" && txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "")
+            if (txtID.Text != "" && txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "" && cbxEstado.Text != "")
             {
                 if (idUsuarioExistente == 0)
                 {
@@ -70,6 +71,7 @@ namespace Vistas
                     oUsuario.Usu_contraseña = txtContrasenia.Text;
                     oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
                     oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
+                    oUsuario.Usu_estado = cbxEstado.Text;
 
                     OperacionesUsuarios.ModificarUsuario(oUsuario);
 
@@ -91,7 +93,7 @@ namespace Vistas
         {
             if (dgvUsuarios.CurrentRow != null)
             {
-                var respuesta = MessageBox.Show("¿Desea ELIMINAR el usuario seleccionado?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var respuesta = MessageBox.Show("¿Desea ELIMINAR el usuario seleccionado?\n(Baja Logica - Estado:INACTIVO)", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (respuesta.ToString() == "Yes")
                 {
                     int id = int.Parse(txtID.Text);
@@ -124,7 +126,7 @@ namespace Vistas
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "")
+            if (txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "" && cbxEstado.Text != "")
             {
                 if (idUsuarioExistente==0)
                 {
@@ -134,6 +136,7 @@ namespace Vistas
                     oUsuario.Usu_contraseña = txtContrasenia.Text;
                     oUsuario.Usu_apellidoNombre = txtApellidoNombre.Text;
                     oUsuario.Rol_codigo = (string)cbxRol.SelectedValue;
+                    oUsuario.Usu_estado = cbxEstado.Text;
 
                     OperacionesUsuarios.AgregarUsuario(oUsuario);
                     lblAgregar.Visible = false;
@@ -171,5 +174,6 @@ namespace Vistas
                 MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: "+idUsuarioExistente.ToString()+"\n\nPor favor ingrese otro diferente.");
             }
         }
+
     }
 }
