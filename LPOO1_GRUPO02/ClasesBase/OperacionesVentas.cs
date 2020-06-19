@@ -354,7 +354,10 @@ namespace ClasesBase
                         break;
                 case "FORMAPAGO":
                         campoDB = "FP_ID";
-                        break;                
+                        break;
+                case "USUARIO":
+                        campoDB = "USU_ID";
+                        break; 
             }
             //CONEXION
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.Cadena);

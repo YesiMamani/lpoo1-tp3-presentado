@@ -54,6 +54,7 @@ namespace Vistas
                 btnEliminar.Enabled = true;
                 btnModificar.Enabled = true;
                 btnAddUser.Enabled = true;
+                idUsuarioExistente = 0;
             }
         }
 
@@ -61,7 +62,7 @@ namespace Vistas
         {
             if (txtID.Text != "" && txtUsuario.Text != "" && txtContrasenia.Text != "" && txtApellidoNombre.Text != "" && cbxRol.Text != "" && cbxEstado.Text != "")
             {
-                if (idUsuarioExistente == 0)
+                if (idUsuarioExistente == 0 || idUsuarioExistente.ToString() == txtID.Text)
                 {
                     Usuario oUsuario = new Usuario();
 
@@ -79,13 +80,13 @@ namespace Vistas
                 }
                 else
                 {
-                    MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.");
-                    txtUsuario.Focus();
+                    MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //txtUsuario.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Debe completar todos los datos");
+                MessageBox.Show("Debe completar todos los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             } 
         }
 
@@ -93,6 +94,14 @@ namespace Vistas
         {
             if (dgvUsuarios.CurrentRow != null)
             {
+                //Valida si está en uso - En este caso solo avisa pero deja seguir
+                int nroVenta = OperacionesVentas.TraerNROVentaSegunParametro(txtID.Text,"USUARIO");
+                if (nroVenta != 0)
+                {
+                    MessageBox.Show("El cliente seleccionado se encuentra en uso en la Venta N°: " + nroVenta
+                        , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                
                 var respuesta = MessageBox.Show("¿Desea ELIMINAR el usuario seleccionado?\n(Baja Logica - Estado:INACTIVO)", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (respuesta.ToString() == "Yes")
                 {
@@ -145,14 +154,14 @@ namespace Vistas
                 }
                 else
                 {
-                    MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.");
-                    txtUsuario.Focus();
+                    MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //txtUsuario.Focus();
                 }
                 
             }
             else
             {
-                MessageBox.Show("Debe completar todos los datos");
+                MessageBox.Show("Debe completar todos los datos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             } 
         }
 
@@ -171,7 +180,7 @@ namespace Vistas
             idUsuarioExistente = OperacionesUsuarios.TraerIdUsuarioSegunNombreUsuario(txtUsuario.Text);
             if (idUsuarioExistente!=0)
             {
-                MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: "+idUsuarioExistente.ToString()+"\n\nPor favor ingrese otro diferente.");
+                MessageBox.Show("El nombre de usuario ingresado se encuentra en uso en el UserID: " + idUsuarioExistente.ToString() + "\n\nPor favor ingrese otro diferente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

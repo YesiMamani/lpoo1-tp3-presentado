@@ -29,19 +29,19 @@ namespace Vistas
             {
                 if (oUsuario.Usu_estado == "ACTIVO")
                 {
-                    MessageBox.Show("Bienvenido al Sistema: " + oUsuario.Usu_apellidoNombre, "Bienvenida");
+                    MessageBox.Show("Bienvenido al Sistema: " + oUsuario.Usu_apellidoNombre, "Bienvenida",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     FrmPrincipal oFrmPrincipal = new FrmPrincipal(oUsuario); //me da acceso al principal
                     this.Visible = false;
                     oFrmPrincipal.Show();  
                 }
                 else
                 {
-                    MessageBox.Show("NO PUEDE INGRESAR AL SISTEMA \n\n EL USUARIO SE ENCUENTRA INACTIVO!");  
+                    MessageBox.Show("NO PUEDE INGRESAR AL SISTEMA \n\n EL USUARIO SE ENCUENTRA INACTIVO!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);  
                 }
             }
             else
             {
-                MessageBox.Show("EL USUARIO O CONTRASEÑA ES INCORRECTO!");//muestra un mnj
+                MessageBox.Show("EL USUARIO O CONTRASEÑA ES INCORRECTO!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);//muestra un mnj
             }
 
                        
