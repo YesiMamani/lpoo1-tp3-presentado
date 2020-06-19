@@ -98,7 +98,7 @@ namespace Vistas
                 int nroVenta = OperacionesVentas.TraerNROVentaSegunParametro(txtID.Text,"USUARIO");
                 if (nroVenta != 0)
                 {
-                    MessageBox.Show("El cliente seleccionado se encuentra en uso en la Venta N°: " + nroVenta
+                    MessageBox.Show("El usuario seleccionado se encuentra en uso en la Venta N°: " + nroVenta
                         , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 
