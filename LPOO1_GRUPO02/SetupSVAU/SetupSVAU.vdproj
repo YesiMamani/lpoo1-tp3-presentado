@@ -21,18 +21,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5515AD5D8E47486A1D7CA5623FD16457"
-        "OwnerKey" = "8:_95D2D8F8A8984A9B89D49D2F0623F5CA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_8FE28C5D829F4D94A22F0961E696B451"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_95D2D8F8A8984A9B89D49D2F0623F5CA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -45,14 +33,26 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5515AD5D8E47486A1D7CA5623FD16457"
+        "MsmKey" = "8:_BD65E15AD9AE4AC497007A830F765F0D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FC9A8221D6C489A33E206C1449C19CAC"
+        "OwnerKey" = "8:_95D2D8F8A8984A9B89D49D2F0623F5CA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_95D2D8F8A8984A9B89D49D2F0623F5CA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_FC9A8221D6C489A33E206C1449C19CAC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -73,6 +73,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -89,6 +97,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -138,14 +154,54 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5515AD5D8E47486A1D7CA5623FD16457"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B1B484BDBC66414AB53633091891607D"
+            {
+            "SourcePath" = "8:..\\ClasesBase\\agencia_log.LDF"
+            "TargetName" = "8:agencia_log.LDF"
+            "Tag" = "8:"
+            "Folder" = "8:_39BF050F09704E3398562BC1EFAF56CD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BD65E15AD9AE4AC497007A830F765F0D"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\Descargas\\car.ico"
+            "TargetName" = "8:car.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_39BF050F09704E3398562BC1EFAF56CD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FC9A8221D6C489A33E206C1449C19CAC"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ClasesBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5515AD5D8E47486A1D7CA5623FD16457"
+                    "_FC9A8221D6C489A33E206C1449C19CAC"
                     {
                     "Name" = "8:ClasesBase.dll"
                     "Attributes" = "3:512"
@@ -167,46 +223,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8FE28C5D829F4D94A22F0961E696B451"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\car.ico"
-            "TargetName" = "8:car.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_39BF050F09704E3398562BC1EFAF56CD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B1B484BDBC66414AB53633091891607D"
-            {
-            "SourcePath" = "8:..\\ClasesBase\\agencia_log.LDF"
-            "TargetName" = "8:agencia_log.LDF"
-            "Tag" = "8:"
-            "Folder" = "8:_39BF050F09704E3398562BC1EFAF56CD"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
         }
@@ -397,7 +413,7 @@
             "Target" = "8:_95D2D8F8A8984A9B89D49D2F0623F5CA"
             "Folder" = "8:_FD999944FFBA4769A063786CEE426988"
             "WorkingFolder" = "8:_39BF050F09704E3398562BC1EFAF56CD"
-            "Icon" = "8:_8FE28C5D829F4D94A22F0961E696B451"
+            "Icon" = "8:_BD65E15AD9AE4AC497007A830F765F0D"
             "Feature" = "8:"
             }
         }
@@ -801,7 +817,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_95D2D8F8A8984A9B89D49D2F0623F5CA"
             {
-            "SourcePath" = "8:..\\Vistas\\obj\\x86\\Debug\\Vistas.exe"
+            "SourcePath" = "8:..\\Vistas\\obj\\x86\\Release\\Vistas.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_39BF050F09704E3398562BC1EFAF56CD"
