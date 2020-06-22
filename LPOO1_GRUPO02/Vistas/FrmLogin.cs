@@ -73,8 +73,15 @@ namespace Vistas
             btnSalir.BackColor = Color.Gray;
         }
 
-       
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)   //si la tecla presionada es enter
+            {
+                txtContrasenia.Focus(); //click al boton ingresar
+            }
+        }
 
+        
         private void txtContrasenia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)   //si la tecla presionada es enter
@@ -82,6 +89,8 @@ namespace Vistas
                 btnIngresar.PerformClick(); //click al boton ingresar
             }
         }
+
+            
 
        
     }

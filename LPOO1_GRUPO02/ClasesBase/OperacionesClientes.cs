@@ -142,7 +142,7 @@ namespace ClasesBase
 
             //CONFIGURACION DE LA CONSULTA
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT CLI_DNI,CLI_DNI+' - '+CLI_Apellido+', '+CLI_Nombre As CLI_ayn FROM Cliente";
+            cmd.CommandText = "SELECT CLI_DNI, CLI_DNI+' - '+CLI_Apellido+', '+CLI_Nombre As CLI_ayn FROM Cliente";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

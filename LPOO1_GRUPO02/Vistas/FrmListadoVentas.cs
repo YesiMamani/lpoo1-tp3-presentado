@@ -39,7 +39,9 @@ namespace Vistas
           
             dgvVentasRealizadas.DataSource = OperacionesVentas.TraerVentas();
             dgvVentasRealizadas.Columns["FECHA DE VENTA"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            cantVentas.Text = "-";
+           
+            
+            cantVentas.Text = "-";     //inicializa los label que contienen resultados(vtas confirmadas,anuadas etc)
             cantVentasConfirmadas.Text = "-";
             cantVentasAnuladas.Text = "-";
             importeTotal.Text = "-";

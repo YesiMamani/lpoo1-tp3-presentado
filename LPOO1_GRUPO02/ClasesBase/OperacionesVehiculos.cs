@@ -19,6 +19,8 @@ namespace ClasesBase
             cmd.CommandText = "SELECT VEH_Matricula," +
                 "VEH_Matricula+' - '+VEH_Marca+' - '+VEH_Linea+' - '+VEH_Color AS VEH_Info,CAST(VEH_Precio AS VARCHAR) AS VEH_Precio FROM Vehiculo "+
                 "WHERE VEH_Matricula NOT IN (SELECT VEH_Matricula FROM Venta WHERE VTA_Estado='ACTIVA')";//Solo muestra vehiculos que no esten vendidos (Si la venta se anula, se libera el vehiculo)
+                //matricula de combo no este en (lista d matriculas de vehiculos vendidos)
+            
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 

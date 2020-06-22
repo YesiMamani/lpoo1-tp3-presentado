@@ -42,7 +42,7 @@ namespace Vistas
             if (dgvUsuarios.CurrentRow != null)
             {
                 //Para que al seleccionar cada fila, se cargue automaticamente en el formulario
-                lblAgregar.Text = "Se encuentra seleccionado el Usuario ID: "+dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
+                lblAgregar.Text = "Se encuentra seleccionado el Usuario ID: " + dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
                 lblAgregar.Visible = true;
                 txtID.Text = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
                 txtUsuario.Text = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
@@ -98,7 +98,7 @@ namespace Vistas
                 int nroVenta = OperacionesVentas.TraerNROVentaSegunParametro(txtID.Text,"USUARIO");
                 if (nroVenta != 0)
                 {
-                    MessageBox.Show("El cliente seleccionado se encuentra en uso en la Venta N°: " + nroVenta
+                    MessageBox.Show("El usuario seleccionado se encuentra en uso en la Venta N°: " + nroVenta
                         , "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 
